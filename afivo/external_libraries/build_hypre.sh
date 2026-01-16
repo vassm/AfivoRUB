@@ -15,6 +15,12 @@ if [ ! -d ${hypre_dirname} ]; then
     tar -xzf ${hypre_tarname}
 fi
 
+#In case default compilers are not the ones listed here
+export CC=gcc
+export CXX=g++
+export FC=gfortran
+
+
 # Configure
 cd ${hypre_dirname}/src
 
