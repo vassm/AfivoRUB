@@ -14,6 +14,12 @@ p.add_argument("summary_file", type=str, nargs='+',
                help="File <simulation>_summary.txt")
 p.add_argument("-SI_field", action='store_true',
                help="Use electric field in V/m rather than Td")
+p.add_argument('-loglog', action='store_true',
+               help='Use log-log scale for the second panel instead of linear')
+p.add_argument('-savefig', type=str,
+               help='Save figure using this filename')
+
+
 args = p.parse_args()
 
 all_data = [pd.read_csv(f, sep=r'\s+') for f in args.summary_file]
@@ -32,4 +38,14 @@ ax = all_data[0].plot(subplots=True, layout=(-1, 2),
 for x in all_data[1:]:
     x.plot(subplots=True, layout=(-1, 2), sharex=True, figsize=(10, 10), ax=ax)
 
-plt.show()
+if args.loglog:
+    # all_data[0].plot(..., subplots=True) returns an array-like of Axes
+    for a in np.ravel(ax):
+        a.set_xscale('log')
+        a.set_yscale('log')
+
+if args.savefig is not None:
+    plt.savefig(args.savefig, bbox_inches='tight', dpi=200)
+    print(f'Saved {args.savefig}')
+else:
+    plt.show()

@@ -1,0 +1,158 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Generates per-timestep 2x2-panel PNG frames into output/frames/
+# Uses afivo/tools/plot_raw_data.py for each variable.
+#
+# Optional flags:
+#   -pattern "output/sim_*.silo"
+#   -phi phi_var   -E E_var   -ne ne_var   -rho rho_var
+#   -every N       (plot every Nth timestep)
+#   -axisymmetric  (pass -axisymmetric to plot_raw_data.py)
+#   -vmin_phi X -vmax_phi Y  (and similarly for E/ne/rho)
+#   -movie         (make output/frames/movie.mp4 after frames are done)
+#   -fps N         (fps for movie, default 30)
+
+PATTERN="output/*.silo"
+PLOT="../../afivo/tools/plot_raw_data.py"
+
+# Defaults (override with flags)
+VAR_PHI="phi"
+VAR_E="electric_fld"
+VAR_NE="e"
+VAR_RHO="rhs"
+
+EVERY=1
+AXISYMM=0
+
+# Movie options
+MAKE_MOVIE=0
+FPS=30
+
+# Optional per-variable color limits
+VMIN_PHI="" ; VMAX_PHI=""
+VMIN_E=""   ; VMAX_E=""
+VMIN_NE=""  ; VMAX_NE=""
+VMIN_RHO="" ; VMAX_RHO=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -pattern) PATTERN="$2"; shift 2;;
+    -plot) PLOT="$2"; shift 2;;
+    -phi) VAR_PHI="$2"; shift 2;;
+    -E) VAR_E="$2"; shift 2;;
+    -ne) VAR_NE="$2"; shift 2;;
+    -rho) VAR_RHO="$2"; shift 2;;
+    -every) EVERY="$2"; shift 2;;
+    -axisymmetric) AXISYMM=1; shift 1;;
+    -vmin_phi) VMIN_PHI="$2"; shift 2;;
+    -vmax_phi) VMAX_PHI="$2"; shift 2;;
+    -vmin_E) VMIN_E="$2"; shift 2;;
+    -vmax_E) VMAX_E="$2"; shift 2;;
+    -vmin_ne) VMIN_NE="$2"; shift 2;;
+    -vmax_ne) VMAX_NE="$2"; shift 2;;
+    -vmin_rho) VMIN_RHO="$2"; shift 2;;
+    -vmax_rho) VMAX_RHO="$2"; shift 2;;
+    -movie) MAKE_MOVIE=1; shift 1;;
+    -fps) FPS="$2"; shift 2;;
+    *) echo "Unknown arg: $1"; exit 1;;
+  esac
+done
+
+if [[ ! -d output ]]; then
+  echo "Error: no ./output directory. Run from your case folder."
+  exit 1
+fi
+if [[ ! -f "$PLOT" ]]; then
+  echo "Error: cannot find $PLOT (use -plot to set path)"
+  exit 1
+fi
+
+mkdir -p output/frames/panels
+
+have_montage=0
+if command -v montage >/dev/null 2>&1; then
+  have_montage=1
+fi
+
+plot_one () {
+  local silo="$1"
+  local var="$2"
+  local outpng="$3"
+  local vmin="$4"
+  local vmax="$5"
+
+  cmd=(python3 "$PLOT" "$silo" -variable "$var" -save_plot "$outpng" -q)
+  if (( AXISYMM == 1 )); then
+    cmd+=(-axisymmetric)
+  fi
+  if [[ -n "$vmin" ]]; then cmd+=(-vmin "$vmin"); fi
+  if [[ -n "$vmax" ]]; then cmd+=(-vmax "$vmax"); fi
+
+  "${cmd[@]}"
+}
+
+shopt -s nullglob
+FILES=( $PATTERN )
+if [[ ${#FILES[@]} -eq 0 ]]; then
+  echo "No files match: $PATTERN"
+  exit 1
+fi
+
+echo "Found ${#FILES[@]} silo files."
+echo "Using variables: phi=$VAR_PHI  E=$VAR_E  ne=$VAR_NE  rho=$VAR_RHO"
+echo "Writing frames to output/frames/"
+echo
+
+i=0
+for f in "${FILES[@]}"; do
+  ((++i))
+  if (( (i-1) % EVERY != 0 )); then
+    continue
+  fi
+
+  base="$(basename "$f" .silo)"
+  p1="output/frames/panels/${base}_phi.png"
+  p2="output/frames/panels/${base}_E.png"
+  p3="output/frames/panels/${base}_ne.png"
+  p4="output/frames/panels/${base}_rho.png"
+  out="output/frames/${base}.png"
+
+  echo "Frame $base"
+
+  plot_one "$f" "$VAR_PHI" "$p1" "$VMIN_PHI" "$VMAX_PHI" & pid1=$!
+  plot_one "$f" "$VAR_E"   "$p2" "$VMIN_E"   "$VMAX_E"   & pid2=$!
+  plot_one "$f" "$VAR_NE"  "$p3" "$VMIN_NE"  "$VMAX_NE"  & pid3=$!
+  plot_one "$f" "$VAR_RHO" "$p4" "$VMIN_RHO" "$VMAX_RHO" & pid4=$!
+
+  wait "$pid1" "$pid2" "$pid3" "$pid4"
+
+  if (( have_montage == 1 )); then
+    montage "$p1" "$p2" "$p3" "$p4" -tile 2x2 -geometry +2+2 "$out"
+  else
+    # If montage isn't available, at least save the E panel as the "frame"
+    cp "$p2" "$out"
+  fi
+done
+
+echo
+echo "Done."
+echo "Frames: output/frames/*.png"
+
+# Delete the single-panel images (keep only the multipanel frames)
+rm -f output/frames/panels/*.png
+
+if (( have_montage == 0 )); then
+  echo "Note: ImageMagick 'montage' not found; frames are just the E panel."
+fi
+
+# Make a movie from the multipanel frames
+if (( MAKE_MOVIE == 1 )); then
+  if command -v ffmpeg >/dev/null 2>&1; then
+    ffmpeg -y -framerate "$FPS" -pattern_type glob -i 'output/frames/*.png' \
+      -c:v libx264 -pix_fmt yuv420p -crf 18 output/frames/movie.mp4
+    echo "Saved output/frames/movie.mp4"
+  else
+    echo "ffmpeg not found; skipping movie creation."
+  fi
+fi

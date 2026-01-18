@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Run this from a folder that contains ./output/
+OUTDIR="output"
+TOOLS="../../tools"     # adjust if your tools path is different
+
+if [[ ! -d "$OUTDIR" ]]; then
+  echo "Error: no ./output directory found. Run this script from your case folder."
+  exit 1
+fi
+
+echo "Using tools: $TOOLS"
+echo "Saving plots into: $OUTDIR"
+echo
+
+# 1) Plot log files (anything ending in _log.txt or .log)
+shopt -s nullglob
+LOGS=( "$OUTDIR"/*_log.txt "$OUTDIR"/*.log )
+
+if [[ ${#LOGS[@]} -gt 0 ]]; then
+  echo "Log files: ${#LOGS[@]}"
+  # One combined plot for all logs found
+  python3 "$TOOLS/plot_log_file.py" "${LOGS[@]}" \
+    -savefig "$OUTDIR/log_plots.png"
+  echo "Saved $OUTDIR/log_plots.png"
+else
+  echo "No log files found in $OUTDIR (skipping log plots)."
+fi
+echo
+
+# 2) Plot summary files (*_summary.txt) using your modified script with -savefig
+SUMS=( "$OUTDIR"/*_summary.txt )
+if [[ ${#SUMS[@]} -gt 0 ]]; then
+  echo "Summary files: ${#SUMS[@]}"
+  for f in "${SUMS[@]}"; do
+    base="$(basename "$f" .txt)"
+    #NOTE: if loglog is needed add -loglog
+    python3 "$TOOLS/plot_transport_data_summary.py" "$f" \
+      -loglog -savefig "$OUTDIR/${base}.png"
+    echo "Saved $OUTDIR/${base}.png"
+  done
+else
+  echo "No *_summary.txt files found in $OUTDIR (skipping summary plots)."
+fi
+echo
+
+# 3) Chemistry rates plots (*_rates.txt bundle) -> plots for a default species
+# You can set SOI in the environment: SOI=O2- ./plot_all.sh
+SOI="${SOI:-e}"
+RATES=( "$OUTDIR"/*_rates.txt )
+if [[ ${#RATES[@]} -gt 0 ]]; then
+  echo "Chemistry rates files: ${#RATES[@]} (SOI=$SOI)"
+  for rf in "${RATES[@]}"; do
+    base="$(basename "$rf" .txt)"
+    python3 "$TOOLS/chemistry_visualize_rates.py" "$rf" -soi "$SOI" \
+      -savefig "$OUTDIR/${base}_${SOI}.png"
+    echo "Saved $OUTDIR/${base}_${SOI}.png"
+  done
+else
+  echo "No *_rates.txt files found in $OUTDIR (skipping chemistry plots)."
+fi
+
+echo
+echo "Done."

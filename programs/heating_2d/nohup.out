@@ -1,0 +1,1675 @@
+             __ _                  _____ _                                      
+      /\    / _(_)                / ____| |                                     
+     /  \  | |_ ___   _____ _____| (___ | |_ _ __ ___  __ _ _ __ ___   ___ _ __ 
+    / /\ \ |  _| \ \ / / _ \______\___ \| __| '__/ _ \/ _` | '_ ` _ \ / _ \ '__|
+   / ____ \| | | |\ V / (_) |     ____) | |_| | |  __/ (_| | | | | | |  __/ |   
+  /_/    \_\_| |_| \_/ \___/     |_____/ \__|_|  \___|\__,_|_| |_| |_|\___|_|   
+                                                                                
+ --- List of reactions ---
+   1 (2) general        e + N2 -> e + N2*(J)                              
+   2 (2) general        e + O2 -> e + O2*(J)                              
+   3 (2) general        e + N2 -> e + N2*(v1)                             
+   4 (2) general        e + N2 -> e + N2*(v1)                             
+   5 (2) general        e + N2 -> e + N2*(v2)                             
+   6 (2) general        e + N2 -> e + N2*(v3)                             
+   7 (2) general        e + N2 -> e + N2*(v4)                             
+   8 (2) general        e + N2 -> e + N2*(v5)                             
+   9 (2) general        e + N2 -> e + N2*(v6)                             
+  10 (2) general        e + N2 -> e + N2*(v7)                             
+  11 (2) general        e + N2 -> e + N2*(v8)                             
+  12 (2) general        e + O2 -> e + O2*(v1)                             
+  13 (2) general        e + O2 -> e + O2*(v1)                             
+  14 (2) general        e + O2 -> e + O2*(v2)                             
+  15 (2) general        e + O2 -> e + O2*(v2)                             
+  16 (2) general        e + O2 -> e + O2*(v3)                             
+  17 (2) general        e + O2 -> e + O2*(v4)                             
+  18 (2) general        e + N2 -> e + N2*(A)                              
+  19 (2) general        e + N2 -> e + N2*(A)                              
+  20 (2) general        e + N2 -> e + N2*(B)                              
+  21 (2) general        e + N2 -> e + N2*(B)                              
+  22 (2) general        e + N2 -> e + N2*(B)                              
+  23 (2) general        e + N2 -> e + N2*(B)                              
+  24 (2) general        e + N2 -> e + N2*(a)                              
+  25 (2) general        e + N2 -> e + N2*(a)                              
+  26 (2) general        e + N2 -> e + N2*(a)                              
+  27 (2) general        e + N2 -> e + N2*(C)                              
+  28 (2) general        e + N2 -> e + N2*(E)                              
+  29 (2) general        e + N2 -> e + N2*(E)                              
+  30 (2) general        e + O2 -> e + O2*(a)                              
+  31 (2) general        e + O2 -> e + O2*(b)                              
+  32 (2) general        e + O2 -> e + O2*(A)                              
+  33 (2) general        e + N2 -> e + N(^4S) + N(^2D)                     
+  34 (2) general        e + O2 -> e + O(^3P) + O(^3P)                     
+  35 (2) general        e + O2 -> e + O(^3P) + O(^1D)                     
+  36 (2) general        e + O2 -> e + O(^3P) + O(^1S)                     
+  37 (2) ionization     e + N2 -> e + e + N2+                             
+  38 (2) ionization     e + N2 -> e + e + N2+                             
+  39 (2) ionization     e + O2 -> e + e + O2+                             
+  40 (3) attachment     e + O2 + O2 -> O2- + O2                           
+  41 (2) attachment     e + O2 -> O- + O(^3P)                             
+  42 (3) attachment     e + O2 + N2 -> O2- + N2                           
+  43 (3) attachment     e + O3 + O2 -> O3- + O2                           
+  44 (2) attachment     e + O3 -> O2- + O(^3P)                            
+  45 (2) attachment     e + O3 -> O- + O2                                 
+  46 (3) attachment     e + NO + M -> NO- + M                             
+  47 (2) attachment     e + NO2 -> NO2-                                   
+  48 (2) attachment     e + NO2 -> O- + NO                                
+  49 (3) attachment     e + N2O + N2 -> N2O- + N2                         
+  50 (3) attachment     e + O(^3P) + O2 -> O2- + O(^3P)                   
+  51 (3) attachment     e + O(^3P) + O2 -> O- + O2                        
+  52 (3) attachment     e + O(^3P) + N2 -> O- + N2                        
+  53 (2) detachment     O- + O2 -> e + O3                                 
+  54 (2) detachment     O- + O2*(a) -> e + O3                             
+  55 (2) detachment     O- + O2*(b) -> e + O2 + O(^3P)                    
+  56 (2) detachment     O- + O3 -> e + 2O2                                
+  57 (2) detachment     O- + N2 -> e + N2O                                
+  58 (2) detachment     O- + N2*(A) -> e + N2 + O(^3P)                    
+  59 (2) detachment     O- + N2*(B) -> e + N2 + O(^3P)                    
+  60 (2) detachment     O- + NO -> e + NO2                                
+  61 (2) detachment     O- + O(^3P) -> e + O2                             
+  62 (2) detachment     O- + N(^4S) -> e + NO                             
+  63 (2) detachment     O2- + M -> e + O2 + M                             
+  64 (2) detachment     O2- + O2*(a) -> e + 2O2                           
+  65 (2) detachment     O2- + O2*(b) -> e + 2O2                           
+  66 (2) detachment     O2- + N2*(A) -> e + O2 + N2                       
+  67 (2) detachment     O2- + N2*(B) -> e + O2 + N2                       
+  68 (2) detachment     O2- + O(^3P) -> e + O3                            
+  69 (2) detachment     O2- + N(^4S) -> e + NO2                           
+  70 (2) detachment     O3- + O3 -> e + 3O2                               
+  71 (2) detachment     O3- + O(^3P) -> e + 2O2                           
+  72 (3) general        O- + O2 + M -> O3- + M                            
+  73 (2) general        O- + O2 -> O2- + O(^3P)                           
+  74 (2) general        O- + O3 -> O3- + O(^3P)                           
+  75 (2) general        O- + O2*(a) -> O2- + O(^3P)                       
+  76 (3) general        O- + NO + M -> NO2- + M                           
+  77 (2) general        O- + NO2 -> NO2- + O(^3P)                         
+  78 (2) general        O- + N2O -> NO- + NO                              
+  79 (2) general        O- + N2O -> N2O- + O(^3P)                         
+  80 (3) general        O2- + O2 + M -> O4- + M                           
+  81 (2) general        O2- + O3 -> O3- + O2                              
+  82 (2) general        O2- + NO2 -> NO2- + O2                            
+  83 (2) general        O2- + NO3 -> NO3- + O2                            
+  84 (2) general        O2- + N2O -> O3- + N2                             
+  85 (2) general        O2- + O(^3P) -> O- + O2                           
+  86 (2) general        O3- + NO -> NO2- + O2                             
+  87 (2) general        O3- + NO -> NO3- + O(^3P)                         
+  88 (2) general        O3- + NO2 -> NO2- + O3                            
+  89 (2) general        O3- + NO2 -> NO3- + O2                            
+  90 (2) general        O3- + NO3 -> NO3- + O3                            
+  91 (2) general        O3- + O(^3P) -> O2- + O2                          
+  92 (2) general        O4- + M -> O2- + O2 + M                           
+  93 (2) general        O4- + O2*(a) -> O2- + 2O2                         
+  94 (2) general        O4- + O2*(b) -> O2- + 2O2                         
+  95 (2) general        O4- + NO -> NO3- + O2                             
+  96 (2) general        O4- + O(^3P) -> O- + 2O2                          
+  97 (2) general        O4- + O(^3P) -> O3- + O2                          
+  98 (2) general        N2+ + O2 -> O2+ + N2                              
+  99 (2) general        N2+ + O3 -> O2+ + N2 + O(^3P)                     
+ 100 (3) general        N2+ + N2 + M -> N4+ + M                           
+ 101 (2) general        N2+ + N2*(A) -> N3+ + N(^4S)                      
+ 102 (2) general        N2+ + NO -> NO+ + N2                              
+ 103 (2) general        N2+ + NO2 -> NO2+ + N2                            
+ 104 (2) general        N2+ + N2O -> NO+ + N2 + N(^4S)                    
+ 105 (2) general        N2+ + N2O -> N2O+ + N2                            
+ 106 (2) general        N2+ + O(^3P) -> O+ + N2                           
+ 107 (2) general        N2+ + O(^3P) -> NO+ + N(^4S)                      
+ 108 (3) general        N2+ + N(^4S) + M -> N3+ + M                       
+ 109 (2) general        N2+ + N(^4S) -> N+ + N2                           
+ 110 (2) general        N4+ + O2 -> O2+ + 2N2                             
+ 111 (2) general        N4+ + N2 -> N2+ + 2N2                             
+ 112 (2) general        N4+ + NO -> NO+ + 2N2                             
+ 113 (2) general        N4+ + O(^3P) -> O+ + 2N2                          
+ 114 (2) general        N4+ + N(^4S) -> N+ + 2N2                          
+ 115 (3) general        O2+ + O2 + M -> O4+ + M                           
+ 116 (3) general        O2+ + N2 + N2 -> N2O2+ + N2                       
+ 117 (2) general        O2+ + N2 -> NO+ + NO                              
+ 118 (2) general        O2+ + NO -> NO+ + O2                              
+ 119 (2) general        O2+ + NO2 -> NO+ + O3                             
+ 120 (2) general        O2+ + NO2 -> NO2+ + O2                            
+ 121 (2) general        O2+ + N(^4S) -> NO+ + O(^3P)                      
+ 122 (2) general        O4+ + O2 -> O2+ + 2O2                             
+ 123 (2) general        O4+ + O2*(a) -> O2+ + 2O2                         
+ 124 (2) general        O4+ + O2*(b) -> O2+ + 2O2                         
+ 125 (2) general        O4+ + N2 -> N2O2+ + O2                            
+ 126 (2) general        O4+ + NO -> NO+ + 2O2                             
+ 127 (2) general        O4+ + NO2 -> NO2+ + 2O2                           
+ 128 (2) general        O4+ + O(^3P) -> O2+ + O3                          
+ 129 (2) general        N2O2+ + O2 -> O4+ + N2                            
+ 130 (2) general        N2O2+ + N2 -> O2+ + 2N2                           
+ 131 (3) recombination  e + N2+ + M -> N2 + M                             
+ 132 (2) recombination  e + N2+ -> N(^4S) + N(^4S)                        
+ 133 (2) recombination  e + N2+ -> N(^4S) + N(^2D)                        
+ 134 (2) recombination  e + N4+ -> 2N2                                    
+ 135 (3) recombination  e + O2+ + M -> O2 + M                             
+ 136 (2) recombination  e + O2+ -> O(^3P) + O(^1D)                        
+ 137 (2) recombination  e + O4+ -> 2O2                                    
+ 138 (2) recombination  e + N2O2+ -> N2 + O2                              
+ 139 (3) recombination  N2+ + O- + M -> N2O + M                           
+ 140 (3) recombination  N2+ + O- + M -> N2 + O(^3P) + M                   
+ 141 (2) recombination  N2+ + O- -> N2 + O(^3P)                           
+ 142 (2) recombination  N2+ + O- -> 2N(^4S) + O(^3P)                      
+ 143 (3) recombination  N2+ + O2- + M -> N2 + O2 + M                      
+ 144 (2) recombination  N2+ + O2- -> N2 + O2                              
+ 145 (2) recombination  N2+ + O2- -> O2 + 2N(^4S)                         
+ 146 (2) recombination  N2+ + O3- -> N2 + O3                              
+ 147 (2) recombination  N2+ + O3- -> O3 + 2N(^4S)                         
+ 148 (2) recombination  N2+ + O4- -> N2 + 2O2                             
+ 149 (2) recombination  N4+ + O- -> 2N2 + O(^3P)                          
+ 150 (2) recombination  N4+ + O2- -> 2N2 + O2                             
+ 151 (2) recombination  N4+ + O3- -> 2N2 + O3                             
+ 152 (2) recombination  N4+ + O4- -> 2N2 + 2O2                            
+ 153 (3) recombination  O2+ + O- + M -> O3 + M                            
+ 154 (3) recombination  O2+ + O- + M -> O2 + O(^3P) + M                   
+ 155 (2) recombination  O2+ + O- -> O2 + O(^3P)                           
+ 156 (2) recombination  O2+ + O- -> 3O(^3P)                               
+ 157 (3) recombination  O2+ + O2- + M -> 2O2 + M                          
+ 158 (2) recombination  O2+ + O2- -> 2O2                                  
+ 159 (2) recombination  O2+ + O2- -> O2 + 2O(^3P)                         
+ 160 (2) recombination  O2+ + O3- -> O2 + O3                              
+ 161 (2) recombination  O2+ + O3- -> O3 + 2O(^3P)                         
+ 162 (2) recombination  O2+ + O4- -> 3O2                                  
+ 163 (2) recombination  O4+ + O- -> 2O2 + O(^3P)                          
+ 164 (2) recombination  O4+ + O2- -> 3O2                                  
+ 165 (2) recombination  O4+ + O3- -> 2O2 + O3                             
+ 166 (2) recombination  O4+ + O4- -> 4O2                                  
+ 167 (2) recombination  N2O2+ + O- -> N2 + O2 + O(^3P)                    
+ 168 (2) recombination  N2O2+ + O- -> 2NO + O(^3P)                        
+ 169 (2) recombination  N2O2+ + O2- -> N2 + 2O2                           
+ 170 (2) recombination  N2O2+ + O2- -> 2NO + O2                           
+ 171 (2) recombination  N2O2+ + O3- -> N2 + O2 + O3                       
+ 172 (2) recombination  N2O2+ + O3- -> 2NO + O3                           
+ 173 (2) recombination  N2O2+ + O4- -> N2 + 3O2                           
+ 174 (2) general        N2*(A) + O2 -> N2 + O2*(a)                        
+ 175 (2) general        N2*(A) + O2 -> N2 + O2*(b)                        
+ 176 (2) general        N2*(A) + O2 -> N2 + 2O(^3P)                       
+ 177 (2) general        N2*(A) + O2 -> N2O + O(^3P)                       
+ 178 (2) general        N2*(A) + N2 -> 2N2                                
+ 179 (2) general        N2*(A) + N2*(A) -> N2 + N2*(B)                    
+ 180 (2) general        N2*(A) + N2*(A) -> N2 + N2*(C)                    
+ 181 (2) general        N2*(A) + NO -> N2 + NO                            
+ 182 (2) general        N2*(A) + N2O -> N2 + NO + N(^4S)                  
+ 183 (2) general        N2*(A) + O(^3P) -> N2 + O(^1S)                    
+ 184 (2) general        N2*(A) + O(^3P) -> NO + N(^2D)                    
+ 185 (2) general        N2*(A) + N(^4S) -> N2 + N(^4S)                    
+ 186 (2) general        N2*(A) + N(^4S) -> N2 + N(^2P)                    
+ 187 (2) general        N2*(B) + O2 -> N2 + 2O(^3P)                       
+ 188 (2) general        N2*(B) + N2 -> 2N2                                
+ 189 (2) general        N2*(B) + N2 -> N2 + N2*(A)                        
+ 190 (2) general        N2*(B) + NO -> NO + N2*(A)                        
+ 191 (1) general        N2*(B) -> N2*(A)                                  
+ 192 (2) general        N2*(a) + O2 -> N2 + O(^3P) + O(^3P)               
+ 193 (2) general        N2*(a) + N2 -> N2 + N2*(B)                        
+ 194 (2) general        N2*(a) + NO -> N2 + N(^4S) + O(^3P)               
+ 195 (2) general        N2*(C) + O2 -> N2 + O(^3P) + O(^1S)               
+ 196 (2) general        N2*(C) + N2 -> N2 + N2*(a)                        
+ 197 (1) general        N2*(C) -> N2*(B)                                  
+ 198 (2) general        N2*(E) + N2 -> N2 + N2*(C)                        
+ 199 (2) general        N(^4S) + O2 -> NO + O(^3P)                        
+ 200 (2) general        N(^4S) + O3 -> NO + O2                            
+ 201 (2) general        N(^4S) + NO -> N2 + O(^3P)                        
+ 202 (2) general        N(^4S) + NO2 -> N2 + O2                           
+ 203 (2) general        N(^4S) + NO2 -> N2 + 2O(^3P)                      
+ 204 (2) general        N(^4S) + NO2 -> 2NO                               
+ 205 (2) general        N(^4S) + NO2 -> N2O + O(^3P)                      
+ 206 (3) general        N(^4S) + O(^3P) + M -> NO + M                     
+ 207 (3) general        N(^4S) + N(^4S) + M -> N2 + M                     
+ 208 (2) general        N(^4S) + N(^2P) -> N(^4S) + N(^2D)                
+ 209 (2) general        N(^2D) + O2 -> NO + O(^3P)                        
+ 210 (2) general        N(^2D) + O2 -> NO + O(^1D)                        
+ 211 (2) general        N(^2D) + N2 -> N2 + N(^4S)                        
+ 212 (2) general        N(^2D) + NO -> N2O                                
+ 213 (2) general        N(^2D) + N2O -> NO + N2                           
+ 214 (2) general        N(^2P) + O2 -> NO + O(^3P)                        
+ 215 (2) general        N(^2P) + N2 -> N2 + N(^2D)                        
+ 216 (2) general        N(^2P) + NO -> N2*(A) + O(^3P)                    
+ 217 (2) general        O2*(a) + O2 -> 2O2                                
+ 218 (3) general        O2*(a) + O2*(a) + O2 -> 2O3                       
+ 219 (2) general        O2*(a) + O2*(a) -> O2 + O2*(b)                    
+ 220 (2) general        O2*(a) + O3 -> 2O2 + O(^3P)                       
+ 221 (2) general        O2*(a) + N2 -> O2 + N2                            
+ 222 (2) general        O2*(a) + NO -> NO + O2                            
+ 223 (2) general        O2*(a) + O(^3P) -> O2 + O(^3P)                    
+ 224 (2) general        O2*(a) + O(^1S) -> 3O(^3P)                        
+ 225 (2) general        O2*(a) + O(^1S) -> O2*(b) + O(^1D)                
+ 226 (2) general        O2*(a) + O(^1S) -> O2*(A) + O(^3P)                
+ 227 (2) general        O2*(a) + N(^4S) -> NO + O(^3P)                    
+ 228 (2) general        O2*(b) + O2 -> O2 + O2*(a)                        
+ 229 (2) general        O2*(b) + O3 -> 2O2 + O(^3P)                       
+ 230 (2) general        O2*(b) + N2 -> N2 + O2*(a)                        
+ 231 (2) general        O2*(b) + NO -> NO + O2*(a)                        
+ 232 (2) general        O2*(b) + O(^3P) -> O2*(a) + O(^3P)                
+ 233 (2) general        O2*(b) + O(^3P) -> O2 + O(^1D)                    
+ 234 (2) general        O2*(A) + O2 -> 2O2*(b)                            
+ 235 (2) general        O2*(A) + N2 -> N2 + O2*(b)                        
+ 236 (2) general        O2*(A) + O(^3P) -> O2*(b) + O(^1D)                
+ 237 (3) general        O(^3P) + O2 + O2 -> O3 + O2                       
+ 238 (3) general        O(^3P) + O2 + N2 -> O3 + N2                       
+ 239 (2) general        O(^3P) + O3 -> 2O2                                
+ 240 (3) general        O(^3P) + NO + O2 -> NO2 + O2                      
+ 241 (3) general        O(^3P) + NO + N2 -> NO2 + N2                      
+ 242 (3) general        O(^3P) + NO2 + M -> NO3 + M                       
+ 243 (2) general        O(^3P) + NO2 -> NO + O2                           
+ 244 (2) general        O(^3P) + NO3 -> NO2 + O2                          
+ 245 (3) general        O(^3P) + O(^3P) + O2 -> 2O2                       
+ 246 (3) general        O(^3P) + O(^3P) + N2 -> O2 + N2                   
+ 247 (2) general        O(^3P) + O(^1S) -> O(^3P) + O(^1D)                
+ 248 (2) general        O(^1D) + O2 -> O2 + O(^3P)                        
+ 249 (2) general        O(^1D) + O2 -> O2*(b) + O(^3P)                    
+ 250 (2) general        O(^1D) + O3 -> 2O2                                
+ 251 (2) general        O(^1D) + O3  -> O2 + 2O(^3P)                      
+ 252 (2) general        O(^1D) + N2 -> N2 + O(^3P)                        
+ 253 (2) general        O(^1D) + NO -> O2 + N(^4S)                        
+ 254 (2) general        O(^1D) + NO2 -> NO + O2                           
+ 255 (2) general        O(^1D) + N2O -> N2 + O2                           
+ 256 (2) general        O(^1D) + N2O -> 2NO                               
+ 257 (2) general        O(^1S) + O2 -> O2 + O(^1D)                        
+ 258 (2) general        O(^1S) + O2 -> O2*(A) + O(^3P)                    
+ 259 (2) general        O(^1S) + O3 -> 2O2                                
+ 260 (2) general        O(^1S) + O3 -> O2 + O(^3P) + O(^1D)               
+ 261 (2) general        O(^1S) + NO -> NO + O(^3P)                        
+ 262 (2) general        O(^1S) + NO -> NO + O(^1D)                        
+ 263 (2) general        O(^1S) + N2O -> N2O + O(^3P)                      
+ 264 (2) general        O(^1S) + N2O -> N2O + O(^1D)                      
+ 265 (2) general        NO + O3 -> NO2 + O2                               
+ 266 (3) general        NO + NO + O2 -> 2NO2                              
+ 267 (3) general        NO + NO2 + N2 -> N2O3 + N2                        
+ 268 (3) general        NO + NO2 + NO3 -> NO + N2O5                       
+ 269 (2) general        NO + NO3 -> 2NO2                                  
+ 270 (2) general        NO2 + O3 -> NO3 + O2                              
+ 271 (3) general        NO2 + NO2 + N2 -> N2O4 + N2                       
+ 272 (3) general        NO2 + NO3 + M -> N2O5 + M                         
+ 273 (2) general        NO2 + NO3 -> NO + NO2 + O2                        
+ 274 (2) general        NO3 + NO3 -> 2NO2 + O2                            
+ -------------------------
+ 
+ --- List of gas species ---
+ -------------------------
+ 
+ --- List of plasma species ---
+   1: e                   
+   2: N2_star_J           
+   3: O2_star_J           
+   4: N2_star_v1          
+   5: N2_star_v2          
+   6: N2_star_v3          
+   7: N2_star_v4          
+   8: N2_star_v5          
+   9: N2_star_v6          
+  10: N2_star_v7          
+  11: N2_star_v8          
+  12: O2_star_v1          
+  13: O2_star_v2          
+  14: O2_star_v3          
+  15: O2_star_v4          
+  16: N2_star_A           
+  17: N2_star_B           
+  18: N2_star_a           
+  19: N2_star_C           
+  20: N2_star_E           
+  21: O2_star_a           
+  22: O2_star_b           
+  23: O2_star_A           
+  24: N__hat4S            
+  25: N__hat2D            
+  26: O__hat3P            
+  27: O__hat1D            
+  28: O__hat1S            
+  29: N2_plus             
+  30: O2_plus             
+  31: O2_min              
+  32: O_min               
+  33: O3                  
+  34: O3_min              
+  35: NO                  
+  36: NO_min              
+  37: NO2                 
+  38: NO2_min             
+  39: N2O                 
+  40: N2O_min             
+  41: O4_min              
+  42: NO3                 
+  43: NO3_min             
+  44: N4_plus             
+  45: N3_plus             
+  46: NO_plus             
+  47: NO2_plus            
+  48: N2O_plus            
+  49: O_plus              
+  50: N_plus              
+  51: O4_plus             
+  52: N2O2_plus           
+  53: N__hat2P            
+  54: N2O3                
+  55: N2O5                
+  56: N2O4                
+ -------------------------
+ Estimated breakdown field (Td):   0.1087E+03
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000000.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000000.dat
+ Simulation output: ./output/1bar_10O2_20ns_interpulse
+ Number of threads:           15
+
+ *** af_print_info(tree) ***
+ Current maximum level:          10
+ Number of boxes used:          705
+ Number of leaves used:         529
+ Memory limit(boxes):        115736
+ Memory limit(GByte):      0.16E+02
+ Highest id in box list:        705
+ Size of box list:           115736
+ Box size (cells):                8
+ Number of cc variables:        178
+ Number of fc variables:          9
+ Type of coordinates:        Cylindrical
+ min. coords:              0.00E+00  0.00E+00
+ dr at level one:          0.17E-02  0.17E-02
+ minval(dr):               0.32E-05
+
+
+ ** Information about stencils **
+ #boxes with stencils: 705
+ #stencils stored:     4575
+ #constant stencils:   4096
+ #variable stencils:   132
+ #sparse stencils:     347
+   0.00% it: 1 t: 0.000E+00 dt: 0.100E-14 wc: 0.440E-06 ncell: 0.339E+05
+         dt:  0.000E+00 0.000E+00 0.000E+00 0.000E+00 (cfl diff drt chem)
+15 Step rejected, (dt, dt_lim) =   0.1003E-10  0.9906E-11
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000001.silo
+   1.31% it: 273 t: 0.655E-09 dt: 0.156E-11 wc: 0.100E+02 ncell: 0.339E+05
+         dt:  0.173E-11 0.107E-10 0.100E-09 0.100E-09 (cfl diff drt chem)
+433 Step rejected, (dt, dt_lim) =   0.1293E-11  0.5558E-12
+   1.88% it: 553 t: 0.940E-09 dt: 0.478E-12 wc: 0.200E+02 ncell: 0.350E+05
+         dt:  0.531E-12 0.231E-11 0.100E-09 0.541E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000002.silo
+   2.12% it: 815 t: 0.106E-08 dt: 0.461E-12 wc: 0.300E+02 ncell: 0.358E+05
+         dt:  0.512E-12 0.225E-11 0.100E-09 0.601E-11 (cfl diff drt chem)
+   2.38% it: 1090 t: 0.119E-08 dt: 0.461E-12 wc: 0.401E+02 ncell: 0.358E+05
+         dt:  0.512E-12 0.225E-11 0.100E-09 0.455E-11 (cfl diff drt chem)
+   2.63% it: 1366 t: 0.132E-08 dt: 0.462E-12 wc: 0.501E+02 ncell: 0.358E+05
+         dt:  0.513E-12 0.226E-11 0.100E-09 0.444E-11 (cfl diff drt chem)
+   2.89% it: 1645 t: 0.144E-08 dt: 0.466E-12 wc: 0.601E+02 ncell: 0.358E+05
+         dt:  0.518E-12 0.230E-11 0.100E-09 0.486E-11 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000003.silo
+   3.15% it: 1918 t: 0.157E-08 dt: 0.483E-12 wc: 0.701E+02 ncell: 0.356E+05
+         dt:  0.537E-12 0.238E-11 0.577E-10 0.580E-11 (cfl diff drt chem)
+   3.43% it: 2201 t: 0.172E-08 dt: 0.519E-12 wc: 0.801E+02 ncell: 0.358E+05
+         dt:  0.576E-12 0.235E-11 0.150E-11 0.544E-11 (cfl diff drt chem)
+   3.71% it: 2477 t: 0.186E-08 dt: 0.498E-12 wc: 0.901E+02 ncell: 0.369E+05
+         dt:  0.553E-12 0.229E-11 0.203E-11 0.475E-11 (cfl diff drt chem)
+   3.98% it: 2752 t: 0.199E-08 dt: 0.487E-12 wc: 0.100E+03 ncell: 0.369E+05
+         dt:  0.542E-12 0.227E-11 0.174E-11 0.458E-11 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000004.silo
+   4.22% it: 2998 t: 0.211E-08 dt: 0.488E-12 wc: 0.110E+03 ncell: 0.379E+05
+         dt:  0.543E-12 0.229E-11 0.215E-11 0.472E-11 (cfl diff drt chem)
+   4.47% it: 3248 t: 0.223E-08 dt: 0.496E-12 wc: 0.120E+03 ncell: 0.385E+05
+         dt:  0.551E-12 0.232E-11 0.221E-11 0.511E-11 (cfl diff drt chem)
+   4.72% it: 3496 t: 0.236E-08 dt: 0.507E-12 wc: 0.130E+03 ncell: 0.387E+05
+         dt:  0.564E-12 0.237E-11 0.228E-11 0.560E-11 (cfl diff drt chem)
+   4.97% it: 3741 t: 0.248E-08 dt: 0.519E-12 wc: 0.140E+03 ncell: 0.379E+05
+         dt:  0.577E-12 0.241E-11 0.230E-11 0.618E-11 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000005.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000005.dat
+   5.27% it: 3979 t: 0.264E-08 dt: 0.140E-11 wc: 0.150E+03 ncell: 0.385E+05
+         dt:  0.156E-11 0.991E-11 0.230E-11 0.714E-11 (cfl diff drt chem)
+   5.98% it: 4223 t: 0.299E-08 dt: 0.148E-11 wc: 0.160E+03 ncell: 0.387E+05
+         dt:  0.165E-11 0.103E-10 0.230E-11 0.900E-11 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000006.silo
+   6.67% it: 4451 t: 0.333E-08 dt: 0.154E-11 wc: 0.170E+03 ncell: 0.406E+05
+         dt:  0.171E-11 0.106E-10 0.230E-11 0.105E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000007.silo
+   7.36% it: 4673 t: 0.368E-08 dt: 0.159E-11 wc: 0.180E+03 ncell: 0.413E+05
+         dt:  0.176E-11 0.108E-10 0.232E-11 0.116E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000008.silo
+   8.06% it: 4891 t: 0.403E-08 dt: 0.162E-11 wc: 0.190E+03 ncell: 0.419E+05
+         dt:  0.180E-11 0.108E-10 0.235E-11 0.123E-10 (cfl diff drt chem)
+   8.81% it: 5120 t: 0.440E-08 dt: 0.164E-11 wc: 0.200E+03 ncell: 0.423E+05
+         dt:  0.182E-11 0.109E-10 0.241E-11 0.126E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000009.silo
+   9.53% it: 5340 t: 0.476E-08 dt: 0.165E-11 wc: 0.210E+03 ncell: 0.427E+05
+         dt:  0.183E-11 0.109E-10 0.249E-11 0.127E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000010.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000010.dat
+  10.23% it: 5554 t: 0.512E-08 dt: 0.165E-11 wc: 0.220E+03 ncell: 0.427E+05
+         dt:  0.184E-11 0.109E-10 0.259E-11 0.124E-10 (cfl diff drt chem)
+  10.98% it: 5779 t: 0.549E-08 dt: 0.165E-11 wc: 0.230E+03 ncell: 0.435E+05
+         dt:  0.183E-11 0.108E-10 0.272E-11 0.121E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000011.silo
+  11.67% it: 5990 t: 0.584E-08 dt: 0.164E-11 wc: 0.240E+03 ncell: 0.431E+05
+         dt:  0.183E-11 0.108E-10 0.286E-11 0.118E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000012.silo
+  12.35% it: 6199 t: 0.618E-08 dt: 0.164E-11 wc: 0.250E+03 ncell: 0.435E+05
+         dt:  0.182E-11 0.107E-10 0.302E-11 0.115E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000013.silo
+  13.03% it: 6407 t: 0.652E-08 dt: 0.163E-11 wc: 0.260E+03 ncell: 0.438E+05
+         dt:  0.181E-11 0.107E-10 0.319E-11 0.114E-10 (cfl diff drt chem)
+  13.74% it: 6623 t: 0.687E-08 dt: 0.163E-11 wc: 0.270E+03 ncell: 0.446E+05
+         dt:  0.181E-11 0.107E-10 0.338E-11 0.113E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000014.silo
+  14.41% it: 6830 t: 0.721E-08 dt: 0.163E-11 wc: 0.280E+03 ncell: 0.446E+05
+         dt:  0.181E-11 0.107E-10 0.357E-11 0.114E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000015.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000015.dat
+  15.07% it: 7032 t: 0.753E-08 dt: 0.164E-11 wc: 0.290E+03 ncell: 0.446E+05
+         dt:  0.182E-11 0.107E-10 0.375E-11 0.115E-10 (cfl diff drt chem)
+  15.77% it: 7245 t: 0.788E-08 dt: 0.164E-11 wc: 0.301E+03 ncell: 0.446E+05
+         dt:  0.182E-11 0.108E-10 0.379E-11 0.117E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000016.silo
+  16.44% it: 7449 t: 0.822E-08 dt: 0.165E-11 wc: 0.311E+03 ncell: 0.458E+05
+         dt:  0.183E-11 0.108E-10 0.382E-11 0.118E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000017.silo
+  17.10% it: 7649 t: 0.855E-08 dt: 0.166E-11 wc: 0.321E+03 ncell: 0.467E+05
+         dt:  0.184E-11 0.108E-10 0.385E-11 0.120E-10 (cfl diff drt chem)
+  17.77% it: 7851 t: 0.888E-08 dt: 0.166E-11 wc: 0.331E+03 ncell: 0.477E+05
+         dt:  0.185E-11 0.108E-10 0.388E-11 0.122E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000018.silo
+  18.40% it: 8041 t: 0.920E-08 dt: 0.167E-11 wc: 0.341E+03 ncell: 0.490E+05
+         dt:  0.185E-11 0.108E-10 0.392E-11 0.123E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000019.silo
+  19.02% it: 8229 t: 0.951E-08 dt: 0.167E-11 wc: 0.351E+03 ncell: 0.498E+05
+         dt:  0.186E-11 0.109E-10 0.395E-11 0.124E-10 (cfl diff drt chem)
+  19.67% it: 8423 t: 0.984E-08 dt: 0.168E-11 wc: 0.361E+03 ncell: 0.498E+05
+         dt:  0.186E-11 0.109E-10 0.398E-11 0.124E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000020.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000020.dat
+  20.27% it: 8601 t: 0.101E-07 dt: 0.168E-11 wc: 0.371E+03 ncell: 0.509E+05
+         dt:  0.187E-11 0.109E-10 0.401E-11 0.125E-10 (cfl diff drt chem)
+  20.91% it: 8792 t: 0.105E-07 dt: 0.168E-11 wc: 0.381E+03 ncell: 0.513E+05
+         dt:  0.187E-11 0.109E-10 0.405E-11 0.126E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000021.silo
+  21.52% it: 8972 t: 0.108E-07 dt: 0.169E-11 wc: 0.391E+03 ncell: 0.523E+05
+         dt:  0.187E-11 0.109E-10 0.408E-11 0.127E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000022.silo
+  22.12% it: 9152 t: 0.111E-07 dt: 0.169E-11 wc: 0.401E+03 ncell: 0.525E+05
+         dt:  0.188E-11 0.109E-10 0.394E-11 0.127E-10 (cfl diff drt chem)
+  22.75% it: 9339 t: 0.114E-07 dt: 0.169E-11 wc: 0.411E+03 ncell: 0.529E+05
+         dt:  0.188E-11 0.109E-10 0.378E-11 0.128E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000023.silo
+  23.35% it: 9516 t: 0.117E-07 dt: 0.170E-11 wc: 0.421E+03 ncell: 0.531E+05
+         dt:  0.188E-11 0.109E-10 0.362E-11 0.129E-10 (cfl diff drt chem)
+  23.97% it: 9699 t: 0.120E-07 dt: 0.170E-11 wc: 0.431E+03 ncell: 0.544E+05
+         dt:  0.189E-11 0.109E-10 0.346E-11 0.130E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000024.silo
+  24.55% it: 9870 t: 0.123E-07 dt: 0.170E-11 wc: 0.441E+03 ncell: 0.556E+05
+         dt:  0.189E-11 0.110E-10 0.331E-11 0.131E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000025.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000025.dat
+  25.12% it: 10035 t: 0.126E-07 dt: 0.171E-11 wc: 0.451E+03 ncell: 0.550E+05
+         dt:  0.190E-11 0.110E-10 0.317E-11 0.132E-10 (cfl diff drt chem)
+  25.71% it: 10209 t: 0.129E-07 dt: 0.171E-11 wc: 0.461E+03 ncell: 0.563E+05
+         dt:  0.190E-11 0.110E-10 0.303E-11 0.133E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000026.silo
+  26.27% it: 10374 t: 0.131E-07 dt: 0.171E-11 wc: 0.471E+03 ncell: 0.567E+05
+         dt:  0.190E-11 0.110E-10 0.289E-11 0.134E-10 (cfl diff drt chem)
+  26.87% it: 10549 t: 0.134E-07 dt: 0.172E-11 wc: 0.481E+03 ncell: 0.580E+05
+         dt:  0.191E-11 0.110E-10 0.276E-11 0.135E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000027.silo
+  27.45% it: 10716 t: 0.137E-07 dt: 0.172E-11 wc: 0.491E+03 ncell: 0.577E+05
+         dt:  0.191E-11 0.110E-10 0.264E-11 0.135E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000028.silo
+  28.01% it: 10880 t: 0.140E-07 dt: 0.172E-11 wc: 0.501E+03 ncell: 0.590E+05
+         dt:  0.191E-11 0.110E-10 0.231E-11 0.136E-10 (cfl diff drt chem)
+  28.48% it: 11051 t: 0.142E-07 dt: 0.875E-12 wc: 0.511E+03 ncell: 0.586E+05
+         dt:  0.197E-11 0.113E-10 0.972E-12 0.159E-10 (cfl diff drt chem)
+  28.79% it: 11222 t: 0.144E-07 dt: 0.126E-11 wc: 0.521E+03 ncell: 0.575E+05
+         dt:  0.210E-11 0.116E-10 0.140E-11 0.185E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000029.silo
+  29.45% it: 11393 t: 0.147E-07 dt: 0.234E-11 wc: 0.531E+03 ncell: 0.559E+05
+         dt:  0.451E-11 0.197E-10 0.260E-11 0.177E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000030.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000030.dat
+  30.37% it: 11589 t: 0.152E-07 dt: 0.263E-11 wc: 0.541E+03 ncell: 0.298E+05
+         dt:  0.650E-11 0.546E-10 0.293E-11 0.270E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000031.silo
+  31.80% it: 11891 t: 0.159E-07 dt: 0.227E-11 wc: 0.551E+03 ncell: 0.289E+05
+         dt:  0.758E-11 0.598E-10 0.252E-11 0.676E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000032.silo
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000033.silo
+  33.25% it: 12214 t: 0.166E-07 dt: 0.225E-11 wc: 0.561E+03 ncell: 0.279E+05
+         dt:  0.201E-10 0.100E-09 0.250E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000034.silo
+  34.84% it: 12563 t: 0.174E-07 dt: 0.230E-11 wc: 0.571E+03 ncell: 0.279E+05
+         dt:  0.236E-10 0.100E-09 0.256E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000035.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000035.dat
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000036.silo
+  36.41% it: 12900 t: 0.182E-07 dt: 0.236E-11 wc: 0.581E+03 ncell: 0.279E+05
+         dt:  0.279E-10 0.100E-09 0.263E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000037.silo
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000038.silo
+  38.03% it: 13241 t: 0.190E-07 dt: 0.243E-11 wc: 0.591E+03 ncell: 0.279E+05
+         dt:  0.334E-10 0.100E-09 0.270E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000039.silo
+  39.74% it: 13589 t: 0.199E-07 dt: 0.249E-11 wc: 0.601E+03 ncell: 0.279E+05
+         dt:  0.403E-10 0.100E-09 0.277E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000040.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000040.dat
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000041.silo
+  41.44% it: 13927 t: 0.207E-07 dt: 0.255E-11 wc: 0.611E+03 ncell: 0.279E+05
+         dt:  0.483E-10 0.100E-09 0.283E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000042.silo
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000043.silo
+  43.19% it: 14268 t: 0.216E-07 dt: 0.260E-11 wc: 0.621E+03 ncell: 0.279E+05
+         dt:  0.578E-10 0.100E-09 0.289E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000044.silo
+  44.96% it: 14605 t: 0.225E-07 dt: 0.264E-11 wc: 0.631E+03 ncell: 0.279E+05
+         dt:  0.691E-10 0.100E-09 0.294E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000045.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000045.dat
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000046.silo
+  46.67% it: 14928 t: 0.233E-07 dt: 0.266E-11 wc: 0.641E+03 ncell: 0.279E+05
+         dt:  0.821E-10 0.100E-09 0.296E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000047.silo
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000048.silo
+  48.41% it: 15255 t: 0.242E-07 dt: 0.265E-11 wc: 0.651E+03 ncell: 0.279E+05
+         dt:  0.908E-10 0.100E-09 0.295E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000049.silo
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000050.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000050.dat
+  50.06% it: 15569 t: 0.250E-07 dt: 0.261E-11 wc: 0.661E+03 ncell: 0.279E+05
+         dt:  0.971E-10 0.100E-09 0.290E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000051.silo
+  51.72% it: 15895 t: 0.259E-07 dt: 0.251E-11 wc: 0.671E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.279E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000052.silo
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000053.silo
+  53.34% it: 16230 t: 0.267E-07 dt: 0.233E-11 wc: 0.681E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.259E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000054.silo
+  54.72% it: 16541 t: 0.274E-07 dt: 0.209E-11 wc: 0.691E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.232E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000055.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000055.dat
+  55.93% it: 16852 t: 0.280E-07 dt: 0.178E-11 wc: 0.701E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.198E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000056.silo
+  56.95% it: 17165 t: 0.285E-07 dt: 0.150E-11 wc: 0.711E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.166E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000057.silo
+  57.83% it: 17481 t: 0.289E-07 dt: 0.131E-11 wc: 0.721E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.146E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000058.silo
+  58.63% it: 17799 t: 0.293E-07 dt: 0.125E-11 wc: 0.731E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.139E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000059.silo
+  59.44% it: 18117 t: 0.297E-07 dt: 0.130E-11 wc: 0.742E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.144E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000060.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000060.dat
+  60.27% it: 18430 t: 0.301E-07 dt: 0.135E-11 wc: 0.752E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.150E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000061.silo
+  61.14% it: 18749 t: 0.306E-07 dt: 0.141E-11 wc: 0.762E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.156E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000062.silo
+  62.06% it: 19067 t: 0.310E-07 dt: 0.147E-11 wc: 0.772E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.163E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000063.silo
+  63.01% it: 19385 t: 0.315E-07 dt: 0.153E-11 wc: 0.782E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.170E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000064.silo
+  64.01% it: 19705 t: 0.320E-07 dt: 0.160E-11 wc: 0.792E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.178E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000065.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000065.dat
+  65.03% it: 20020 t: 0.325E-07 dt: 0.167E-11 wc: 0.802E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.186E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000066.silo
+  66.12% it: 20338 t: 0.331E-07 dt: 0.175E-11 wc: 0.812E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.194E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000067.silo
+  67.25% it: 20656 t: 0.336E-07 dt: 0.183E-11 wc: 0.822E+03 ncell: 0.279E+05
+         dt:  0.100E-09 0.100E-09 0.203E-11 0.100E-09 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000068.silo
+20861 Step rejected, (dt, dt_lim) =   0.1881E-11  0.1722E-11
+20861 Step rejected, (dt, dt_lim) =   0.1550E-11  0.1469E-11
+20861 Step rejected, (dt, dt_lim) =   0.1322E-11  0.1288E-11
+20861 Step rejected, (dt, dt_lim) =   0.1159E-11  0.1154E-11
+20863 Step rejected, (dt, dt_lim) =   0.1717E-11  0.1563E-11
+20863 Step rejected, (dt, dt_lim) =   0.1407E-11  0.1322E-11
+20863 Step rejected, (dt, dt_lim) =   0.1189E-11  0.1145E-11
+20863 Step rejected, (dt, dt_lim) =   0.1031E-11  0.1003E-11
+20863 Step rejected, (dt, dt_lim) =   0.9028E-12  0.8848E-12
+20863 Step rejected, (dt, dt_lim) =   0.7964E-12  0.7853E-12
+20863 Step rejected, (dt, dt_lim) =   0.7068E-12  0.7007E-12
+20863 Step rejected, (dt, dt_lim) =   0.6307E-12  0.6284E-12
+  68.19% it: 20913 t: 0.341E-07 dt: 0.186E-11 wc: 0.832E+03 ncell: 0.531E+05
+         dt:  0.146E-10 0.353E-10 0.206E-11 0.379E-10 (cfl diff drt chem)
+  68.97% it: 21120 t: 0.345E-07 dt: 0.191E-11 wc: 0.842E+03 ncell: 0.531E+05
+         dt:  0.146E-10 0.353E-10 0.213E-11 0.736E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000069.silo
+  69.76% it: 21324 t: 0.349E-07 dt: 0.197E-11 wc: 0.852E+03 ncell: 0.531E+05
+         dt:  0.147E-10 0.354E-10 0.219E-11 0.787E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000070.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000070.dat
+21396 Step rejected, (dt, dt_lim) =   0.1988E-11  0.9853E-13
+21396 Step rejected, (dt, dt_lim) =   0.8868E-13  0.2029E-13
+21397 Step rejected, (dt, dt_lim) =   0.1988E-11  0.3511E-12
+21397 Step rejected, (dt, dt_lim) =   0.3160E-12  0.5715E-14
+21398 Step rejected, (dt, dt_lim) =   0.1989E-11  0.3497E-12
+21398 Step rejected, (dt, dt_lim) =   0.3147E-12  0.5762E-14
+21399 Step rejected, (dt, dt_lim) =   0.1989E-11  0.3488E-12
+21399 Step rejected, (dt, dt_lim) =   0.3139E-12  0.5803E-14
+21400 Step rejected, (dt, dt_lim) =   0.1807E-11  0.4428E-12
+21400 Step rejected, (dt, dt_lim) =   0.3985E-12  0.4617E-14
+21402 Step rejected, (dt, dt_lim) =   0.1179E-11  0.8377E-12
+21402 Step rejected, (dt, dt_lim) =   0.7539E-12  0.3657E-14
+21404 Step rejected, (dt, dt_lim) =   0.1505E-11  0.4427E-12
+21404 Step rejected, (dt, dt_lim) =   0.3984E-12  0.7000E-14
+21405 Step rejected, (dt, dt_lim) =   0.1278E-11  0.5765E-12
+21405 Step rejected, (dt, dt_lim) =   0.5188E-12  0.7840E-14
+21407 Step rejected, (dt, dt_lim) =   0.1021E-11  0.8079E-12
+21407 Step rejected, (dt, dt_lim) =   0.7271E-12  0.1020E-13
+21409 Step rejected, (dt, dt_lim) =   0.1101E-11  0.8053E-12
+21409 Step rejected, (dt, dt_lim) =   0.7248E-12  0.1480E-13
+21411 Step rejected, (dt, dt_lim) =   0.1048E-11  0.9686E-12
+21411 Step rejected, (dt, dt_lim) =   0.8717E-12  0.2173E-13
+21413 Step rejected, (dt, dt_lim) =   0.1206E-11  0.1002E-11
+21413 Step rejected, (dt, dt_lim) =   0.9016E-12  0.2562E-13
+21415 Step rejected, (dt, dt_lim) =   0.1253E-11  0.9740E-12
+21415 Step rejected, (dt, dt_lim) =   0.8766E-12  0.3849E-13
+21417 Step rejected, (dt, dt_lim) =   0.1329E-11  0.9825E-12
+21417 Step rejected, (dt, dt_lim) =   0.8842E-12  0.5064E-13
+21423 Step rejected, (dt, dt_lim) =   0.1967E-11  0.1572E-11
+21423 Step rejected, (dt, dt_lim) =   0.1415E-11  0.4388E-13
+21424 Step rejected, (dt, dt_lim) =   0.2002E-11  0.1522E-11
+21424 Step rejected, (dt, dt_lim) =   0.1369E-11  0.5137E-13
+21430 Step rejected, (dt, dt_lim) =   0.2411E-11  0.1981E-11
+21430 Step rejected, (dt, dt_lim) =   0.1783E-11  0.9414E-13
+21438 Step rejected, (dt, dt_lim) =   0.3579E-11  0.3415E-11
+21438 Step rejected, (dt, dt_lim) =   0.3074E-11  0.9140E-13
+21443 Step rejected, (dt, dt_lim) =   0.3907E-11  0.3743E-11
+21443 Step rejected, (dt, dt_lim) =   0.3369E-11  0.1951E-12
+21446 Step rejected, (dt, dt_lim) =   0.3826E-11  0.3657E-11
+21446 Step rejected, (dt, dt_lim) =   0.3291E-11  0.3370E-12
+21449 Step rejected, (dt, dt_lim) =   0.4017E-11  0.3798E-11
+21449 Step rejected, (dt, dt_lim) =   0.3419E-11  0.3332E-12
+21456 Step rejected, (dt, dt_lim) =   0.4592E-11  0.4447E-11
+21456 Step rejected, (dt, dt_lim) =   0.4002E-11  0.3090E-12
+21462 Step rejected, (dt, dt_lim) =   0.4750E-11  0.4381E-11
+21462 Step rejected, (dt, dt_lim) =   0.3943E-11  0.3090E-12
+21467 Step rejected, (dt, dt_lim) =   0.5161E-11  0.4565E-11
+21467 Step rejected, (dt, dt_lim) =   0.4109E-11  0.3077E-12
+21472 Step rejected, (dt, dt_lim) =   0.4995E-11  0.4838E-11
+21472 Step rejected, (dt, dt_lim) =   0.4354E-11  0.3082E-12
+  70.27% it: 21473 t: 0.351E-07 dt: 0.188E-11 wc: 0.862E+03 ncell: 0.531E+05
+         dt:  0.730E-11 0.314E-10 0.209E-11 0.211E-10 (cfl diff drt chem)
+21477 Step rejected, (dt, dt_lim) =   0.5369E-11  0.4593E-11
+21477 Step rejected, (dt, dt_lim) =   0.4133E-11  0.3083E-12
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000071.silo
+  71.45% it: 21657 t: 0.357E-07 dt: 0.257E-11 wc: 0.872E+03 ncell: 0.531E+05
+         dt:  0.286E-11 0.139E-10 0.303E-11 0.393E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000072.silo
+  72.14% it: 21846 t: 0.361E-07 dt: 0.129E-11 wc: 0.882E+03 ncell: 0.531E+05
+         dt:  0.274E-11 0.131E-10 0.143E-11 0.385E-10 (cfl diff drt chem)
+  72.61% it: 22049 t: 0.363E-07 dt: 0.110E-11 wc: 0.892E+03 ncell: 0.531E+05
+         dt:  0.294E-11 0.139E-10 0.123E-11 0.383E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000073.silo
+  73.03% it: 22245 t: 0.365E-07 dt: 0.105E-11 wc: 0.902E+03 ncell: 0.531E+05
+         dt:  0.305E-11 0.143E-10 0.117E-11 0.382E-10 (cfl diff drt chem)
+  73.46% it: 22448 t: 0.367E-07 dt: 0.104E-11 wc: 0.912E+03 ncell: 0.531E+05
+         dt:  0.313E-11 0.145E-10 0.115E-11 0.382E-10 (cfl diff drt chem)
+  73.87% it: 22650 t: 0.369E-07 dt: 0.103E-11 wc: 0.922E+03 ncell: 0.531E+05
+         dt:  0.319E-11 0.146E-10 0.115E-11 0.382E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000074.silo
+  74.28% it: 22846 t: 0.371E-07 dt: 0.104E-11 wc: 0.932E+03 ncell: 0.531E+05
+         dt:  0.325E-11 0.148E-10 0.115E-11 0.382E-10 (cfl diff drt chem)
+  74.70% it: 23049 t: 0.374E-07 dt: 0.105E-11 wc: 0.942E+03 ncell: 0.531E+05
+         dt:  0.330E-11 0.149E-10 0.116E-11 0.382E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000075.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000075.dat
+  75.10% it: 23241 t: 0.376E-07 dt: 0.105E-11 wc: 0.952E+03 ncell: 0.531E+05
+         dt:  0.334E-11 0.150E-10 0.117E-11 0.381E-10 (cfl diff drt chem)
+  75.53% it: 23444 t: 0.378E-07 dt: 0.107E-11 wc: 0.962E+03 ncell: 0.531E+05
+         dt:  0.339E-11 0.152E-10 0.118E-11 0.381E-10 (cfl diff drt chem)
+  75.96% it: 23645 t: 0.380E-07 dt: 0.108E-11 wc: 0.972E+03 ncell: 0.538E+05
+         dt:  0.344E-11 0.153E-10 0.120E-11 0.370E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000076.silo
+  76.38% it: 23838 t: 0.382E-07 dt: 0.109E-11 wc: 0.982E+03 ncell: 0.538E+05
+         dt:  0.348E-11 0.154E-10 0.121E-11 0.315E-10 (cfl diff drt chem)
+  76.81% it: 24035 t: 0.384E-07 dt: 0.110E-11 wc: 0.992E+03 ncell: 0.550E+05
+         dt:  0.352E-11 0.155E-10 0.123E-11 0.256E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000077.silo
+  77.23% it: 24222 t: 0.386E-07 dt: 0.112E-11 wc: 0.100E+04 ncell: 0.552E+05
+         dt:  0.357E-11 0.157E-10 0.124E-11 0.203E-10 (cfl diff drt chem)
+  77.68% it: 24421 t: 0.388E-07 dt: 0.113E-11 wc: 0.101E+04 ncell: 0.559E+05
+         dt:  0.209E-11 0.112E-10 0.126E-11 0.155E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000078.silo
+  78.08% it: 24601 t: 0.390E-07 dt: 0.114E-11 wc: 0.102E+04 ncell: 0.573E+05
+         dt:  0.192E-11 0.108E-10 0.127E-11 0.119E-10 (cfl diff drt chem)
+  78.50% it: 24781 t: 0.392E-07 dt: 0.116E-11 wc: 0.103E+04 ncell: 0.575E+05
+         dt:  0.179E-11 0.103E-10 0.129E-11 0.917E-11 (cfl diff drt chem)
+  78.91% it: 24957 t: 0.395E-07 dt: 0.117E-11 wc: 0.104E+04 ncell: 0.586E+05
+         dt:  0.167E-11 0.998E-11 0.130E-11 0.742E-11 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000079.silo
+  79.30% it: 25122 t: 0.396E-07 dt: 0.118E-11 wc: 0.105E+04 ncell: 0.600E+05
+         dt:  0.161E-11 0.980E-11 0.132E-11 0.673E-11 (cfl diff drt chem)
+  79.70% it: 25291 t: 0.398E-07 dt: 0.120E-11 wc: 0.106E+04 ncell: 0.628E+05
+         dt:  0.159E-11 0.982E-11 0.133E-11 0.680E-11 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000080.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000080.dat
+  80.06% it: 25443 t: 0.400E-07 dt: 0.121E-11 wc: 0.107E+04 ncell: 0.634E+05
+         dt:  0.161E-11 0.995E-11 0.134E-11 0.729E-11 (cfl diff drt chem)
+  80.46% it: 25605 t: 0.402E-07 dt: 0.122E-11 wc: 0.108E+04 ncell: 0.630E+05
+         dt:  0.165E-11 0.101E-10 0.136E-11 0.805E-11 (cfl diff drt chem)
+  80.86% it: 25768 t: 0.404E-07 dt: 0.124E-11 wc: 0.109E+04 ncell: 0.636E+05
+         dt:  0.170E-11 0.103E-10 0.138E-11 0.889E-11 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000081.silo
+  81.25% it: 25923 t: 0.406E-07 dt: 0.126E-11 wc: 0.110E+04 ncell: 0.636E+05
+         dt:  0.173E-11 0.104E-10 0.139E-11 0.961E-11 (cfl diff drt chem)
+  81.65% it: 26084 t: 0.408E-07 dt: 0.127E-11 wc: 0.111E+04 ncell: 0.636E+05
+         dt:  0.176E-11 0.106E-10 0.141E-11 0.103E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000082.silo
+  82.05% it: 26239 t: 0.410E-07 dt: 0.129E-11 wc: 0.112E+04 ncell: 0.628E+05
+         dt:  0.179E-11 0.106E-10 0.143E-11 0.108E-10 (cfl diff drt chem)
+  82.47% it: 26400 t: 0.412E-07 dt: 0.131E-11 wc: 0.113E+04 ncell: 0.646E+05
+         dt:  0.181E-11 0.107E-10 0.145E-11 0.113E-10 (cfl diff drt chem)
+  82.89% it: 26559 t: 0.414E-07 dt: 0.133E-11 wc: 0.114E+04 ncell: 0.652E+05
+         dt:  0.183E-11 0.108E-10 0.148E-11 0.117E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000083.silo
+  83.29% it: 26709 t: 0.416E-07 dt: 0.135E-11 wc: 0.115E+04 ncell: 0.657E+05
+         dt:  0.184E-11 0.108E-10 0.150E-11 0.119E-10 (cfl diff drt chem)
+  83.71% it: 26865 t: 0.419E-07 dt: 0.137E-11 wc: 0.116E+04 ncell: 0.663E+05
+         dt:  0.185E-11 0.108E-10 0.152E-11 0.121E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000084.silo
+  84.12% it: 27013 t: 0.421E-07 dt: 0.139E-11 wc: 0.117E+04 ncell: 0.669E+05
+         dt:  0.186E-11 0.108E-10 0.155E-11 0.123E-10 (cfl diff drt chem)
+  84.55% it: 27166 t: 0.423E-07 dt: 0.142E-11 wc: 0.118E+04 ncell: 0.676E+05
+         dt:  0.186E-11 0.109E-10 0.157E-11 0.124E-10 (cfl diff drt chem)
+  84.99% it: 27319 t: 0.425E-07 dt: 0.144E-11 wc: 0.119E+04 ncell: 0.680E+05
+         dt:  0.187E-11 0.109E-10 0.160E-11 0.125E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000085.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000085.dat
+  85.39% it: 27458 t: 0.427E-07 dt: 0.147E-11 wc: 0.120E+04 ncell: 0.678E+05
+         dt:  0.187E-11 0.109E-10 0.163E-11 0.125E-10 (cfl diff drt chem)
+  85.84% it: 27609 t: 0.429E-07 dt: 0.150E-11 wc: 0.121E+04 ncell: 0.692E+05
+         dt:  0.187E-11 0.109E-10 0.166E-11 0.126E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000086.silo
+  86.26% it: 27751 t: 0.431E-07 dt: 0.152E-11 wc: 0.122E+04 ncell: 0.690E+05
+         dt:  0.188E-11 0.109E-10 0.169E-11 0.126E-10 (cfl diff drt chem)
+  86.72% it: 27899 t: 0.434E-07 dt: 0.155E-11 wc: 0.123E+04 ncell: 0.698E+05
+         dt:  0.188E-11 0.109E-10 0.173E-11 0.127E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000087.silo
+  87.16% it: 28039 t: 0.436E-07 dt: 0.159E-11 wc: 0.124E+04 ncell: 0.698E+05
+         dt:  0.188E-11 0.109E-10 0.176E-11 0.127E-10 (cfl diff drt chem)
+  87.63% it: 28185 t: 0.438E-07 dt: 0.162E-11 wc: 0.125E+04 ncell: 0.705E+05
+         dt:  0.188E-11 0.109E-10 0.180E-11 0.128E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000088.silo
+  88.07% it: 28322 t: 0.440E-07 dt: 0.165E-11 wc: 0.126E+04 ncell: 0.713E+05
+         dt:  0.189E-11 0.109E-10 0.184E-11 0.129E-10 (cfl diff drt chem)
+  88.56% it: 28467 t: 0.443E-07 dt: 0.169E-11 wc: 0.127E+04 ncell: 0.721E+05
+         dt:  0.189E-11 0.109E-10 0.188E-11 0.130E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000089.silo
+  89.02% it: 28603 t: 0.445E-07 dt: 0.170E-11 wc: 0.128E+04 ncell: 0.723E+05
+         dt:  0.189E-11 0.110E-10 0.192E-11 0.130E-10 (cfl diff drt chem)
+  89.51% it: 28748 t: 0.448E-07 dt: 0.171E-11 wc: 0.129E+04 ncell: 0.734E+05
+         dt:  0.190E-11 0.110E-10 0.196E-11 0.131E-10 (cfl diff drt chem)
+  90.00% it: 28891 t: 0.450E-07 dt: 0.171E-11 wc: 0.130E+04 ncell: 0.736E+05
+         dt:  0.190E-11 0.110E-10 0.201E-11 0.132E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000090.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000090.dat
+  90.45% it: 29023 t: 0.452E-07 dt: 0.171E-11 wc: 0.131E+04 ncell: 0.742E+05
+         dt:  0.190E-11 0.110E-10 0.205E-11 0.133E-10 (cfl diff drt chem)
+  90.93% it: 29165 t: 0.455E-07 dt: 0.171E-11 wc: 0.132E+04 ncell: 0.755E+05
+         dt:  0.190E-11 0.110E-10 0.210E-11 0.133E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000091.silo
+  91.38% it: 29297 t: 0.457E-07 dt: 0.172E-11 wc: 0.133E+04 ncell: 0.761E+05
+         dt:  0.191E-11 0.110E-10 0.214E-11 0.134E-10 (cfl diff drt chem)
+  91.86% it: 29435 t: 0.459E-07 dt: 0.172E-11 wc: 0.134E+04 ncell: 0.772E+05
+         dt:  0.191E-11 0.110E-10 0.218E-11 0.134E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000092.silo
+  92.30% it: 29564 t: 0.461E-07 dt: 0.172E-11 wc: 0.135E+04 ncell: 0.792E+05
+         dt:  0.191E-11 0.110E-10 0.222E-11 0.135E-10 (cfl diff drt chem)
+  92.76% it: 29697 t: 0.464E-07 dt: 0.172E-11 wc: 0.136E+04 ncell: 0.794E+05
+         dt:  0.191E-11 0.110E-10 0.226E-11 0.135E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000093.silo
+  93.19% it: 29823 t: 0.466E-07 dt: 0.172E-11 wc: 0.137E+04 ncell: 0.794E+05
+         dt:  0.191E-11 0.110E-10 0.229E-11 0.135E-10 (cfl diff drt chem)
+  93.64% it: 29955 t: 0.468E-07 dt: 0.172E-11 wc: 0.138E+04 ncell: 0.805E+05
+         dt:  0.191E-11 0.110E-10 0.233E-11 0.136E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000094.silo
+  94.07% it: 30080 t: 0.470E-07 dt: 0.172E-11 wc: 0.139E+04 ncell: 0.809E+05
+         dt:  0.191E-11 0.110E-10 0.236E-11 0.135E-10 (cfl diff drt chem)
+  94.52% it: 30211 t: 0.473E-07 dt: 0.172E-11 wc: 0.140E+04 ncell: 0.817E+05
+         dt:  0.191E-11 0.110E-10 0.239E-11 0.135E-10 (cfl diff drt chem)
+  94.97% it: 30341 t: 0.475E-07 dt: 0.172E-11 wc: 0.141E+04 ncell: 0.824E+05
+         dt:  0.191E-11 0.110E-10 0.242E-11 0.135E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000095.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000095.dat
+  95.38% it: 30459 t: 0.477E-07 dt: 0.172E-11 wc: 0.142E+04 ncell: 0.834E+05
+         dt:  0.191E-11 0.110E-10 0.244E-11 0.135E-10 (cfl diff drt chem)
+  95.81% it: 30585 t: 0.479E-07 dt: 0.172E-11 wc: 0.143E+04 ncell: 0.844E+05
+         dt:  0.191E-11 0.110E-10 0.245E-11 0.134E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000096.silo
+  96.21% it: 30703 t: 0.481E-07 dt: 0.172E-11 wc: 0.144E+04 ncell: 0.859E+05
+         dt:  0.191E-11 0.110E-10 0.247E-11 0.133E-10 (cfl diff drt chem)
+  96.64% it: 30826 t: 0.483E-07 dt: 0.172E-11 wc: 0.145E+04 ncell: 0.872E+05
+         dt:  0.191E-11 0.110E-10 0.248E-11 0.132E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000097.silo
+  97.03% it: 30941 t: 0.485E-07 dt: 0.171E-11 wc: 0.146E+04 ncell: 0.880E+05
+         dt:  0.190E-11 0.109E-10 0.248E-11 0.130E-10 (cfl diff drt chem)
+  97.44% it: 31061 t: 0.487E-07 dt: 0.171E-11 wc: 0.147E+04 ncell: 0.890E+05
+         dt:  0.190E-11 0.109E-10 0.249E-11 0.127E-10 (cfl diff drt chem)
+  97.85% it: 31180 t: 0.489E-07 dt: 0.170E-11 wc: 0.148E+04 ncell: 0.899E+05
+         dt:  0.189E-11 0.109E-10 0.249E-11 0.124E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000098.silo
+  98.21% it: 31290 t: 0.491E-07 dt: 0.149E-11 wc: 0.149E+04 ncell: 0.905E+05
+         dt:  0.190E-11 0.109E-10 0.165E-11 0.126E-10 (cfl diff drt chem)
+  98.49% it: 31406 t: 0.492E-07 dt: 0.957E-12 wc: 0.150E+04 ncell: 0.907E+05
+         dt:  0.192E-11 0.110E-10 0.106E-11 0.134E-10 (cfl diff drt chem)
+  98.71% it: 31523 t: 0.494E-07 dt: 0.912E-12 wc: 0.151E+04 ncell: 0.907E+05
+         dt:  0.195E-11 0.111E-10 0.101E-11 0.142E-10 (cfl diff drt chem)
+  98.92% it: 31642 t: 0.495E-07 dt: 0.911E-12 wc: 0.152E+04 ncell: 0.895E+05
+         dt:  0.197E-11 0.112E-10 0.101E-11 0.150E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000099.silo
+  99.18% it: 31755 t: 0.496E-07 dt: 0.150E-11 wc: 0.153E+04 ncell: 0.886E+05
+         dt:  0.203E-11 0.113E-10 0.167E-11 0.163E-10 (cfl diff drt chem)
+  99.58% it: 31876 t: 0.498E-07 dt: 0.161E-11 wc: 0.154E+04 ncell: 0.878E+05
+         dt:  0.407E-11 0.178E-10 0.179E-11 0.191E-10 (cfl diff drt chem)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000100.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000100.dat
+ 100.00% it: 31978 t: 0.500E-07 dt: 0.208E-11 wc: 0.155E+04 ncell: 0.867E+05
+         dt:  0.367E-11 0.164E-10 0.232E-11 0.240E-10 (cfl diff drt chem)
+             __ _                  _____ _                                      
+      /\    / _(_)                / ____| |                                     
+     /  \  | |_ ___   _____ _____| (___ | |_ _ __ ___  __ _ _ __ ___   ___ _ __ 
+    / /\ \ |  _| \ \ / / _ \______\___ \| __| '__/ _ \/ _` | '_ ` _ \ / _ \ '__|
+   / ____ \| | | |\ V / (_) |     ____) | |_| | |  __/ (_| | | | | | |  __/ |   
+  /_/    \_\_| |_| \_/ \___/     |_____/ \__|_|  \___|\__,_|_| |_| |_|\___|_|   
+                                                                                
+ Spacing used for lookup tables: quadratic
+ Approximate relative lookup table interpolation errors:
+                     Mobility:      0.8570
+        Diffusion coefficient:      0.0290
+       Ionization coefficient:      0.0000
+       Attachment coefficient:      0.0001
+ --- List of reactions ---
+   1 (2) general        e + N2 -> e + N2*(J)                              
+   2 (2) general        e + O2 -> e + O2*(J)                              
+   3 (2) general        e + N2 -> e + N2*(v1)                             
+   4 (2) general        e + N2 -> e + N2*(v1)                             
+   5 (2) general        e + N2 -> e + N2*(v2)                             
+   6 (2) general        e + N2 -> e + N2*(v3)                             
+   7 (2) general        e + N2 -> e + N2*(v4)                             
+   8 (2) general        e + N2 -> e + N2*(v5)                             
+   9 (2) general        e + N2 -> e + N2*(v6)                             
+  10 (2) general        e + N2 -> e + N2*(v7)                             
+  11 (2) general        e + N2 -> e + N2*(v8)                             
+  12 (2) general        e + O2 -> e + O2*(v1)                             
+  13 (2) general        e + O2 -> e + O2*(v1)                             
+  14 (2) general        e + O2 -> e + O2*(v2)                             
+  15 (2) general        e + O2 -> e + O2*(v2)                             
+  16 (2) general        e + O2 -> e + O2*(v3)                             
+  17 (2) general        e + O2 -> e + O2*(v4)                             
+  18 (2) general        e + N2 -> e + N2*(A)                              
+  19 (2) general        e + N2 -> e + N2*(A)                              
+  20 (2) general        e + N2 -> e + N2*(B)                              
+  21 (2) general        e + N2 -> e + N2*(B)                              
+  22 (2) general        e + N2 -> e + N2*(B)                              
+  23 (2) general        e + N2 -> e + N2*(B)                              
+  24 (2) general        e + N2 -> e + N2*(a)                              
+  25 (2) general        e + N2 -> e + N2*(a)                              
+  26 (2) general        e + N2 -> e + N2*(a)                              
+  27 (2) general        e + N2 -> e + N2*(C)                              
+  28 (2) general        e + N2 -> e + N2*(E)                              
+  29 (2) general        e + N2 -> e + N2*(E)                              
+  30 (2) general        e + O2 -> e + O2*(a)                              
+  31 (2) general        e + O2 -> e + O2*(b)                              
+  32 (2) general        e + O2 -> e + O2*(A)                              
+  33 (2) general        e + N2 -> e + N(^4S) + N(^2D)                     
+  34 (2) general        e + O2 -> e + O(^3P) + O(^3P)                     
+  35 (2) general        e + O2 -> e + O(^3P) + O(^1D)                     
+  36 (2) general        e + O2 -> e + O(^3P) + O(^1S)                     
+  37 (2) ionization     e + N2 -> e + e + N2+                             
+  38 (2) ionization     e + N2 -> e + e + N2+                             
+  39 (2) ionization     e + O2 -> e + e + O2+                             
+  40 (3) attachment     e + O2 + O2 -> O2- + O2                           
+  41 (2) attachment     e + O2 -> O- + O(^3P)                             
+  42 (3) attachment     e + O2 + N2 -> O2- + N2                           
+  43 (3) attachment     e + O3 + O2 -> O3- + O2                           
+  44 (2) attachment     e + O3 -> O2- + O(^3P)                            
+  45 (2) attachment     e + O3 -> O- + O2                                 
+  46 (3) attachment     e + NO + M -> NO- + M                             
+  47 (2) attachment     e + NO2 -> NO2-                                   
+  48 (2) attachment     e + NO2 -> O- + NO                                
+  49 (3) attachment     e + N2O + N2 -> N2O- + N2                         
+  50 (3) attachment     e + O(^3P) + O2 -> O2- + O(^3P)                   
+  51 (3) attachment     e + O(^3P) + O2 -> O- + O2                        
+  52 (3) attachment     e + O(^3P) + N2 -> O- + N2                        
+  53 (2) detachment     O- + O2 -> e + O3                                 
+  54 (2) detachment     O- + O2*(a) -> e + O3                             
+  55 (2) detachment     O- + O2*(b) -> e + O2 + O(^3P)                    
+  56 (2) detachment     O- + O3 -> e + 2O2                                
+  57 (2) detachment     O- + N2 -> e + N2O                                
+  58 (2) detachment     O- + N2*(A) -> e + N2 + O(^3P)                    
+  59 (2) detachment     O- + N2*(B) -> e + N2 + O(^3P)                    
+  60 (2) detachment     O- + NO -> e + NO2                                
+  61 (2) detachment     O- + O(^3P) -> e + O2                             
+  62 (2) detachment     O- + N(^4S) -> e + NO                             
+  63 (2) detachment     O2- + M -> e + O2 + M                             
+  64 (2) detachment     O2- + O2*(a) -> e + 2O2                           
+  65 (2) detachment     O2- + O2*(b) -> e + 2O2                           
+  66 (2) detachment     O2- + N2*(A) -> e + O2 + N2                       
+  67 (2) detachment     O2- + N2*(B) -> e + O2 + N2                       
+  68 (2) detachment     O2- + O(^3P) -> e + O3                            
+  69 (2) detachment     O2- + N(^4S) -> e + NO2                           
+  70 (2) detachment     O3- + O3 -> e + 3O2                               
+  71 (2) detachment     O3- + O(^3P) -> e + 2O2                           
+  72 (3) general        O- + O2 + M -> O3- + M                            
+  73 (2) general        O- + O2 -> O2- + O(^3P)                           
+  74 (2) general        O- + O3 -> O3- + O(^3P)                           
+  75 (2) general        O- + O2*(a) -> O2- + O(^3P)                       
+  76 (3) general        O- + NO + M -> NO2- + M                           
+  77 (2) general        O- + NO2 -> NO2- + O(^3P)                         
+  78 (2) general        O- + N2O -> NO- + NO                              
+  79 (2) general        O- + N2O -> N2O- + O(^3P)                         
+  80 (3) general        O2- + O2 + M -> O4- + M                           
+  81 (2) general        O2- + O3 -> O3- + O2                              
+  82 (2) general        O2- + NO2 -> NO2- + O2                            
+  83 (2) general        O2- + NO3 -> NO3- + O2                            
+  84 (2) general        O2- + N2O -> O3- + N2                             
+  85 (2) general        O2- + O(^3P) -> O- + O2                           
+  86 (2) general        O3- + NO -> NO2- + O2                             
+  87 (2) general        O3- + NO -> NO3- + O(^3P)                         
+  88 (2) general        O3- + NO2 -> NO2- + O3                            
+  89 (2) general        O3- + NO2 -> NO3- + O2                            
+  90 (2) general        O3- + NO3 -> NO3- + O3                            
+  91 (2) general        O3- + O(^3P) -> O2- + O2                          
+  92 (2) general        O4- + M -> O2- + O2 + M                           
+  93 (2) general        O4- + O2*(a) -> O2- + 2O2                         
+  94 (2) general        O4- + O2*(b) -> O2- + 2O2                         
+  95 (2) general        O4- + NO -> NO3- + O2                             
+  96 (2) general        O4- + O(^3P) -> O- + 2O2                          
+  97 (2) general        O4- + O(^3P) -> O3- + O2                          
+  98 (2) general        N2+ + O2 -> O2+ + N2                              
+  99 (2) general        N2+ + O3 -> O2+ + N2 + O(^3P)                     
+ 100 (3) general        N2+ + N2 + M -> N4+ + M                           
+ 101 (2) general        N2+ + N2*(A) -> N3+ + N(^4S)                      
+ 102 (2) general        N2+ + NO -> NO+ + N2                              
+ 103 (2) general        N2+ + NO2 -> NO2+ + N2                            
+ 104 (2) general        N2+ + N2O -> NO+ + N2 + N(^4S)                    
+ 105 (2) general        N2+ + N2O -> N2O+ + N2                            
+ 106 (2) general        N2+ + O(^3P) -> O+ + N2                           
+ 107 (2) general        N2+ + O(^3P) -> NO+ + N(^4S)                      
+ 108 (3) general        N2+ + N(^4S) + M -> N3+ + M                       
+ 109 (2) general        N2+ + N(^4S) -> N+ + N2                           
+ 110 (2) general        N4+ + O2 -> O2+ + 2N2                             
+ 111 (2) general        N4+ + N2 -> N2+ + 2N2                             
+ 112 (2) general        N4+ + NO -> NO+ + 2N2                             
+ 113 (2) general        N4+ + O(^3P) -> O+ + 2N2                          
+ 114 (2) general        N4+ + N(^4S) -> N+ + 2N2                          
+ 115 (3) general        O2+ + O2 + M -> O4+ + M                           
+ 116 (3) general        O2+ + N2 + N2 -> N2O2+ + N2                       
+ 117 (2) general        O2+ + N2 -> NO+ + NO                              
+ 118 (2) general        O2+ + NO -> NO+ + O2                              
+ 119 (2) general        O2+ + NO2 -> NO+ + O3                             
+ 120 (2) general        O2+ + NO2 -> NO2+ + O2                            
+ 121 (2) general        O2+ + N(^4S) -> NO+ + O(^3P)                      
+ 122 (2) general        O4+ + O2 -> O2+ + 2O2                             
+ 123 (2) general        O4+ + O2*(a) -> O2+ + 2O2                         
+ 124 (2) general        O4+ + O2*(b) -> O2+ + 2O2                         
+ 125 (2) general        O4+ + N2 -> N2O2+ + O2                            
+ 126 (2) general        O4+ + NO -> NO+ + 2O2                             
+ 127 (2) general        O4+ + NO2 -> NO2+ + 2O2                           
+ 128 (2) general        O4+ + O(^3P) -> O2+ + O3                          
+ 129 (2) general        N2O2+ + O2 -> O4+ + N2                            
+ 130 (2) general        N2O2+ + N2 -> O2+ + 2N2                           
+ 131 (3) recombination  e + N2+ + M -> N2 + M                             
+ 132 (2) recombination  e + N2+ -> N(^4S) + N(^4S)                        
+ 133 (2) recombination  e + N2+ -> N(^4S) + N(^2D)                        
+ 134 (2) recombination  e + N4+ -> 2N2                                    
+ 135 (3) recombination  e + O2+ + M -> O2 + M                             
+ 136 (2) recombination  e + O2+ -> O(^3P) + O(^1D)                        
+ 137 (2) recombination  e + O4+ -> 2O2                                    
+ 138 (2) recombination  e + N2O2+ -> N2 + O2                              
+ 139 (3) recombination  N2+ + O- + M -> N2O + M                           
+ 140 (3) recombination  N2+ + O- + M -> N2 + O(^3P) + M                   
+ 141 (2) recombination  N2+ + O- -> N2 + O(^3P)                           
+ 142 (2) recombination  N2+ + O- -> 2N(^4S) + O(^3P)                      
+ 143 (3) recombination  N2+ + O2- + M -> N2 + O2 + M                      
+ 144 (2) recombination  N2+ + O2- -> N2 + O2                              
+ 145 (2) recombination  N2+ + O2- -> O2 + 2N(^4S)                         
+ 146 (2) recombination  N2+ + O3- -> N2 + O3                              
+ 147 (2) recombination  N2+ + O3- -> O3 + 2N(^4S)                         
+ 148 (2) recombination  N2+ + O4- -> N2 + 2O2                             
+ 149 (2) recombination  N4+ + O- -> 2N2 + O(^3P)                          
+ 150 (2) recombination  N4+ + O2- -> 2N2 + O2                             
+ 151 (2) recombination  N4+ + O3- -> 2N2 + O3                             
+ 152 (2) recombination  N4+ + O4- -> 2N2 + 2O2                            
+ 153 (3) recombination  O2+ + O- + M -> O3 + M                            
+ 154 (3) recombination  O2+ + O- + M -> O2 + O(^3P) + M                   
+ 155 (2) recombination  O2+ + O- -> O2 + O(^3P)                           
+ 156 (2) recombination  O2+ + O- -> 3O(^3P)                               
+ 157 (3) recombination  O2+ + O2- + M -> 2O2 + M                          
+ 158 (2) recombination  O2+ + O2- -> 2O2                                  
+ 159 (2) recombination  O2+ + O2- -> O2 + 2O(^3P)                         
+ 160 (2) recombination  O2+ + O3- -> O2 + O3                              
+ 161 (2) recombination  O2+ + O3- -> O3 + 2O(^3P)                         
+ 162 (2) recombination  O2+ + O4- -> 3O2                                  
+ 163 (2) recombination  O4+ + O- -> 2O2 + O(^3P)                          
+ 164 (2) recombination  O4+ + O2- -> 3O2                                  
+ 165 (2) recombination  O4+ + O3- -> 2O2 + O3                             
+ 166 (2) recombination  O4+ + O4- -> 4O2                                  
+ 167 (2) recombination  N2O2+ + O- -> N2 + O2 + O(^3P)                    
+ 168 (2) recombination  N2O2+ + O- -> 2NO + O(^3P)                        
+ 169 (2) recombination  N2O2+ + O2- -> N2 + 2O2                           
+ 170 (2) recombination  N2O2+ + O2- -> 2NO + O2                           
+ 171 (2) recombination  N2O2+ + O3- -> N2 + O2 + O3                       
+ 172 (2) recombination  N2O2+ + O3- -> 2NO + O3                           
+ 173 (2) recombination  N2O2+ + O4- -> N2 + 3O2                           
+ 174 (2) general        N2*(A) + O2 -> N2 + O2*(a)                        
+ 175 (2) general        N2*(A) + O2 -> N2 + O2*(b)                        
+ 176 (2) general        N2*(A) + O2 -> N2 + 2O(^3P)                       
+ 177 (2) general        N2*(A) + O2 -> N2O + O(^3P)                       
+ 178 (2) general        N2*(A) + N2 -> 2N2                                
+ 179 (2) general        N2*(A) + N2*(A) -> N2 + N2*(B)                    
+ 180 (2) general        N2*(A) + N2*(A) -> N2 + N2*(C)                    
+ 181 (2) general        N2*(A) + NO -> N2 + NO                            
+ 182 (2) general        N2*(A) + N2O -> N2 + NO + N(^4S)                  
+ 183 (2) general        N2*(A) + O(^3P) -> N2 + O(^1S)                    
+ 184 (2) general        N2*(A) + O(^3P) -> NO + N(^2D)                    
+ 185 (2) general        N2*(A) + N(^4S) -> N2 + N(^4S)                    
+ 186 (2) general        N2*(A) + N(^4S) -> N2 + N(^2P)                    
+ 187 (2) general        N2*(B) + O2 -> N2 + 2O(^3P)                       
+ 188 (2) general        N2*(B) + N2 -> 2N2                                
+ 189 (2) general        N2*(B) + N2 -> N2 + N2*(A)                        
+ 190 (2) general        N2*(B) + NO -> NO + N2*(A)                        
+ 191 (1) general        N2*(B) -> N2*(A)                                  
+ 192 (2) general        N2*(a) + O2 -> N2 + O(^3P) + O(^3P)               
+ 193 (2) general        N2*(a) + N2 -> N2 + N2*(B)                        
+ 194 (2) general        N2*(a) + NO -> N2 + N(^4S) + O(^3P)               
+ 195 (2) general        N2*(C) + O2 -> N2 + O(^3P) + O(^1S)               
+ 196 (2) general        N2*(C) + N2 -> N2 + N2*(a)                        
+ 197 (1) general        N2*(C) -> N2*(B)                                  
+ 198 (2) general        N2*(E) + N2 -> N2 + N2*(C)                        
+ 199 (2) general        N(^4S) + O2 -> NO + O(^3P)                        
+ 200 (2) general        N(^4S) + O3 -> NO + O2                            
+ 201 (2) general        N(^4S) + NO -> N2 + O(^3P)                        
+ 202 (2) general        N(^4S) + NO2 -> N2 + O2                           
+ 203 (2) general        N(^4S) + NO2 -> N2 + 2O(^3P)                      
+ 204 (2) general        N(^4S) + NO2 -> 2NO                               
+ 205 (2) general        N(^4S) + NO2 -> N2O + O(^3P)                      
+ 206 (3) general        N(^4S) + O(^3P) + M -> NO + M                     
+ 207 (3) general        N(^4S) + N(^4S) + M -> N2 + M                     
+ 208 (2) general        N(^4S) + N(^2P) -> N(^4S) + N(^2D)                
+ 209 (2) general        N(^2D) + O2 -> NO + O(^3P)                        
+ 210 (2) general        N(^2D) + O2 -> NO + O(^1D)                        
+ 211 (2) general        N(^2D) + N2 -> N2 + N(^4S)                        
+ 212 (2) general        N(^2D) + NO -> N2O                                
+ 213 (2) general        N(^2D) + N2O -> NO + N2                           
+ 214 (2) general        N(^2P) + O2 -> NO + O(^3P)                        
+ 215 (2) general        N(^2P) + N2 -> N2 + N(^2D)                        
+ 216 (2) general        N(^2P) + NO -> N2*(A) + O(^3P)                    
+ 217 (2) general        O2*(a) + O2 -> 2O2                                
+ 218 (3) general        O2*(a) + O2*(a) + O2 -> 2O3                       
+ 219 (2) general        O2*(a) + O2*(a) -> O2 + O2*(b)                    
+ 220 (2) general        O2*(a) + O3 -> 2O2 + O(^3P)                       
+ 221 (2) general        O2*(a) + N2 -> O2 + N2                            
+ 222 (2) general        O2*(a) + NO -> NO + O2                            
+ 223 (2) general        O2*(a) + O(^3P) -> O2 + O(^3P)                    
+ 224 (2) general        O2*(a) + O(^1S) -> 3O(^3P)                        
+ 225 (2) general        O2*(a) + O(^1S) -> O2*(b) + O(^1D)                
+ 226 (2) general        O2*(a) + O(^1S) -> O2*(A) + O(^3P)                
+ 227 (2) general        O2*(a) + N(^4S) -> NO + O(^3P)                    
+ 228 (2) general        O2*(b) + O2 -> O2 + O2*(a)                        
+ 229 (2) general        O2*(b) + O3 -> 2O2 + O(^3P)                       
+ 230 (2) general        O2*(b) + N2 -> N2 + O2*(a)                        
+ 231 (2) general        O2*(b) + NO -> NO + O2*(a)                        
+ 232 (2) general        O2*(b) + O(^3P) -> O2*(a) + O(^3P)                
+ 233 (2) general        O2*(b) + O(^3P) -> O2 + O(^1D)                    
+ 234 (2) general        O2*(A) + O2 -> 2O2*(b)                            
+ 235 (2) general        O2*(A) + N2 -> N2 + O2*(b)                        
+ 236 (2) general        O2*(A) + O(^3P) -> O2*(b) + O(^1D)                
+ 237 (3) general        O(^3P) + O2 + O2 -> O3 + O2                       
+ 238 (3) general        O(^3P) + O2 + N2 -> O3 + N2                       
+ 239 (2) general        O(^3P) + O3 -> 2O2                                
+ 240 (3) general        O(^3P) + NO + O2 -> NO2 + O2                      
+ 241 (3) general        O(^3P) + NO + N2 -> NO2 + N2                      
+ 242 (3) general        O(^3P) + NO2 + M -> NO3 + M                       
+ 243 (2) general        O(^3P) + NO2 -> NO + O2                           
+ 244 (2) general        O(^3P) + NO3 -> NO2 + O2                          
+ 245 (3) general        O(^3P) + O(^3P) + O2 -> 2O2                       
+ 246 (3) general        O(^3P) + O(^3P) + N2 -> O2 + N2                   
+ 247 (2) general        O(^3P) + O(^1S) -> O(^3P) + O(^1D)                
+ 248 (2) general        O(^1D) + O2 -> O2 + O(^3P)                        
+ 249 (2) general        O(^1D) + O2 -> O2*(b) + O(^3P)                    
+ 250 (2) general        O(^1D) + O3 -> 2O2                                
+ 251 (2) general        O(^1D) + O3  -> O2 + 2O(^3P)                      
+ 252 (2) general        O(^1D) + N2 -> N2 + O(^3P)                        
+ 253 (2) general        O(^1D) + NO -> O2 + N(^4S)                        
+ 254 (2) general        O(^1D) + NO2 -> NO + O2                           
+ 255 (2) general        O(^1D) + N2O -> N2 + O2                           
+ 256 (2) general        O(^1D) + N2O -> 2NO                               
+ 257 (2) general        O(^1S) + O2 -> O2 + O(^1D)                        
+ 258 (2) general        O(^1S) + O2 -> O2*(A) + O(^3P)                    
+ 259 (2) general        O(^1S) + O3 -> 2O2                                
+ 260 (2) general        O(^1S) + O3 -> O2 + O(^3P) + O(^1D)               
+ 261 (2) general        O(^1S) + NO -> NO + O(^3P)                        
+ 262 (2) general        O(^1S) + NO -> NO + O(^1D)                        
+ 263 (2) general        O(^1S) + N2O -> N2O + O(^3P)                      
+ 264 (2) general        O(^1S) + N2O -> N2O + O(^1D)                      
+ 265 (2) general        NO + O3 -> NO2 + O2                               
+ 266 (3) general        NO + NO + O2 -> 2NO2                              
+ 267 (3) general        NO + NO2 + N2 -> N2O3 + N2                        
+ 268 (3) general        NO + NO2 + NO3 -> NO + N2O5                       
+ 269 (2) general        NO + NO3 -> 2NO2                                  
+ 270 (2) general        NO2 + O3 -> NO3 + O2                              
+ 271 (3) general        NO2 + NO2 + N2 -> N2O4 + N2                       
+ 272 (3) general        NO2 + NO3 + M -> N2O5 + M                         
+ 273 (2) general        NO2 + NO3 -> NO + NO2 + O2                        
+ 274 (2) general        NO3 + NO3 -> 2NO2 + O2                            
+ -------------------------
+ 
+ --- List of gas species ---
+ -------------------------
+ 
+ --- List of plasma species ---
+   1: e                   
+   2: N2_star_J           
+   3: O2_star_J           
+   4: N2_star_v1          
+   5: N2_star_v2          
+   6: N2_star_v3          
+   7: N2_star_v4          
+   8: N2_star_v5          
+   9: N2_star_v6          
+  10: N2_star_v7          
+  11: N2_star_v8          
+  12: O2_star_v1          
+  13: O2_star_v2          
+  14: O2_star_v3          
+  15: O2_star_v4          
+  16: N2_star_A           
+  17: N2_star_B           
+  18: N2_star_a           
+  19: N2_star_C           
+  20: N2_star_E           
+  21: O2_star_a           
+  22: O2_star_b           
+  23: O2_star_A           
+  24: N__hat4S            
+  25: N__hat2D            
+  26: O__hat3P            
+  27: O__hat1D            
+  28: O__hat1S            
+  29: N2_plus             
+  30: O2_plus             
+  31: O2_min              
+  32: O_min               
+  33: O3                  
+  34: O3_min              
+  35: NO                  
+  36: NO_min              
+  37: NO2                 
+  38: NO2_min             
+  39: N2O                 
+  40: N2O_min             
+  41: O4_min              
+  42: NO3                 
+  43: NO3_min             
+  44: N4_plus             
+  45: N3_plus             
+  46: NO_plus             
+  47: NO2_plus            
+  48: N2O_plus            
+  49: O_plus              
+  50: N_plus              
+  51: O4_plus             
+  52: N2O2_plus           
+  53: N__hat2P            
+  54: N2O3                
+  55: N2O5                
+  56: N2O4                
+ -------------------------
+ Estimated breakdown field (Td):   0.1087E+03
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000000.silo
+ af_write_tree: written ./output/1bar_10O2_20ns_interpulse_000000.dat
+ Simulation output: ./output/1bar_10O2_20ns_interpulse
+ Number of threads:           15
+
+ *** af_print_info(tree) ***
+ Current maximum level:          10
+ Number of boxes used:          697
+ Number of leaves used:         523
+ Memory limit(boxes):        115736
+ Memory limit(GByte):      0.16E+02
+ Highest id in box list:        697
+ Size of box list:           115736
+ Box size (cells):                8
+ Number of cc variables:        178
+ Number of fc variables:          9
+ Type of coordinates:        Cylindrical
+ min. coords:              0.00E+00  0.00E+00
+ dr at level one:          0.17E-02  0.17E-02
+ minval(dr):               0.32E-05
+
+
+ ** Information about stencils **
+ #boxes with stencils: 697
+ #stencils stored:     1736
+ #constant stencils:   1258
+ #variable stencils:   135
+ #sparse stencils:     343
+   0.00% it: 1 t: 0.000E+00 dt: 0.100E-14 wc: 0.779E-04 ncell: 0.335E+05
+         dt:  0.000E+00 0.000E+00 0.000E+00 0.000E+00 (cfl drt chem other)
+15 Step rejected (#1) (dt, dt_lim) =   0.9855E-11  0.9724E-11 frac  0.00
+   0.05% it: 15 t: 0.262E-10 dt: 0.986E-11 wc: 0.476E+00 ncell: 0.335E+05
+         dt:  0.972E-11 0.139E+00 0.123E-04 0.100+101 (cfl drt chem other)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000001.silo
+   1.31% it: 280 t: 0.655E-09 dt: 0.151E-11 wc: 0.100E+02 ncell: 0.335E+05
+         dt:  0.167E-11 0.569E-02 0.440E-07 0.100+101 (cfl drt chem other)
+445 Step rejected (#2) (dt, dt_lim) =   0.1249E-11  0.5397E-12 frac  0.00
+   1.76% it: 445 t: 0.882E-09 dt: 0.125E-11 wc: 0.157E+02 ncell: 0.342E+05
+         dt:  0.540E-12 0.245E-04 0.147E-09 0.100+101 (cfl drt chem other)
+   1.87% it: 559 t: 0.935E-09 dt: 0.462E-12 wc: 0.200E+02 ncell: 0.346E+05
+         dt:  0.514E-12 0.804E-05 0.577E-10 0.100+101 (cfl drt chem other)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000002.silo
+   2.10% it: 821 t: 0.105E-08 dt: 0.444E-12 wc: 0.301E+02 ncell: 0.354E+05
+         dt:  0.494E-12 0.304E-06 0.449E-11 0.100+101 (cfl drt chem other)
+   2.35% it: 1102 t: 0.118E-08 dt: 0.428E-12 wc: 0.401E+02 ncell: 0.354E+05
+         dt:  0.494E-12 0.321E-07 0.476E-12 0.100+101 (cfl drt chem other)
+   2.48% it: 1383 t: 0.124E-08 dt: 0.135E-12 wc: 0.501E+02 ncell: 0.354E+05
+         dt:  0.494E-12 0.101E-07 0.150E-12 0.100+101 (cfl drt chem other)
+   2.54% it: 1665 t: 0.127E-08 dt: 0.799E-13 wc: 0.602E+02 ncell: 0.354E+05
+         dt:  0.494E-12 0.597E-08 0.887E-13 0.100+101 (cfl drt chem other)
+   2.58% it: 1948 t: 0.129E-08 dt: 0.568E-13 wc: 0.702E+02 ncell: 0.354E+05
+         dt:  0.494E-12 0.425E-08 0.631E-13 0.100+101 (cfl drt chem other)
+   2.61% it: 2244 t: 0.130E-08 dt: 0.437E-13 wc: 0.802E+02 ncell: 0.354E+05
+         dt:  0.494E-12 0.327E-08 0.486E-13 0.100+101 (cfl drt chem other)
+   2.63% it: 2543 t: 0.132E-08 dt: 0.355E-13 wc: 0.902E+02 ncell: 0.354E+05
+         dt:  0.494E-12 0.266E-08 0.395E-13 0.100+101 (cfl drt chem other)
+   2.65% it: 2842 t: 0.133E-08 dt: 0.299E-13 wc: 0.100E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.223E-08 0.332E-13 0.100+101 (cfl drt chem other)
+   2.67% it: 3141 t: 0.133E-08 dt: 0.258E-13 wc: 0.110E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.193E-08 0.287E-13 0.100+101 (cfl drt chem other)
+   2.68% it: 3440 t: 0.134E-08 dt: 0.227E-13 wc: 0.120E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.170E-08 0.252E-13 0.100+101 (cfl drt chem other)
+   2.69% it: 3740 t: 0.135E-08 dt: 0.203E-13 wc: 0.130E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.152E-08 0.225E-13 0.100+101 (cfl drt chem other)
+   2.71% it: 4040 t: 0.135E-08 dt: 0.183E-13 wc: 0.140E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.137E-08 0.204E-13 0.100+101 (cfl drt chem other)
+   2.72% it: 4341 t: 0.136E-08 dt: 0.167E-13 wc: 0.150E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.125E-08 0.186E-13 0.100+101 (cfl drt chem other)
+   2.73% it: 4643 t: 0.136E-08 dt: 0.153E-13 wc: 0.160E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.115E-08 0.170E-13 0.100+101 (cfl drt chem other)
+   2.74% it: 4945 t: 0.137E-08 dt: 0.142E-13 wc: 0.170E+03 ncell: 0.354E+05
+         dt:  0.495E-12 0.106E-08 0.158E-13 0.100+101 (cfl drt chem other)
+   2.74% it: 5247 t: 0.137E-08 dt: 0.132E-13 wc: 0.180E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.987E-09 0.147E-13 0.100+101 (cfl drt chem other)
+   2.75% it: 5549 t: 0.138E-08 dt: 0.123E-13 wc: 0.190E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.922E-09 0.137E-13 0.100+101 (cfl drt chem other)
+   2.76% it: 5852 t: 0.138E-08 dt: 0.116E-13 wc: 0.200E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.865E-09 0.129E-13 0.100+101 (cfl drt chem other)
+   2.77% it: 6153 t: 0.138E-08 dt: 0.109E-13 wc: 0.210E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.816E-09 0.121E-13 0.100+101 (cfl drt chem other)
+   2.77% it: 6456 t: 0.139E-08 dt: 0.103E-13 wc: 0.220E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.771E-09 0.114E-13 0.100+101 (cfl drt chem other)
+   2.78% it: 6757 t: 0.139E-08 dt: 0.977E-14 wc: 0.230E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.731E-09 0.109E-13 0.100+101 (cfl drt chem other)
+   2.78% it: 7060 t: 0.139E-08 dt: 0.929E-14 wc: 0.240E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.695E-09 0.103E-13 0.100+101 (cfl drt chem other)
+   2.79% it: 7362 t: 0.139E-08 dt: 0.885E-14 wc: 0.250E+03 ncell: 0.354E+05
+         dt:  0.496E-12 0.662E-09 0.984E-14 0.100+101 (cfl drt chem other)
+   2.79% it: 7665 t: 0.140E-08 dt: 0.846E-14 wc: 0.260E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.633E-09 0.939E-14 0.100+101 (cfl drt chem other)
+   2.80% it: 7969 t: 0.140E-08 dt: 0.809E-14 wc: 0.270E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.605E-09 0.899E-14 0.100+101 (cfl drt chem other)
+   2.80% it: 8271 t: 0.140E-08 dt: 0.776E-14 wc: 0.280E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.580E-09 0.862E-14 0.100+101 (cfl drt chem other)
+   2.81% it: 8574 t: 0.140E-08 dt: 0.745E-14 wc: 0.290E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.557E-09 0.828E-14 0.100+101 (cfl drt chem other)
+   2.81% it: 8877 t: 0.141E-08 dt: 0.717E-14 wc: 0.300E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.536E-09 0.796E-14 0.100+101 (cfl drt chem other)
+   2.82% it: 9181 t: 0.141E-08 dt: 0.690E-14 wc: 0.311E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.517E-09 0.767E-14 0.100+101 (cfl drt chem other)
+   2.82% it: 9485 t: 0.141E-08 dt: 0.666E-14 wc: 0.321E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.498E-09 0.740E-14 0.100+101 (cfl drt chem other)
+   2.83% it: 9787 t: 0.141E-08 dt: 0.643E-14 wc: 0.331E+03 ncell: 0.354E+05
+         dt:  0.497E-12 0.481E-09 0.715E-14 0.100+101 (cfl drt chem other)
+   2.83% it: 10089 t: 0.141E-08 dt: 0.622E-14 wc: 0.341E+03 ncell: 0.354E+05
+         dt:  0.498E-12 0.466E-09 0.691E-14 0.100+101 (cfl drt chem other)
+   2.83% it: 10392 t: 0.142E-08 dt: 0.602E-14 wc: 0.351E+03 ncell: 0.354E+05
+         dt:  0.498E-12 0.451E-09 0.669E-14 0.100+101 (cfl drt chem other)
+   2.84% it: 10695 t: 0.142E-08 dt: 0.584E-14 wc: 0.361E+03 ncell: 0.354E+05
+         dt:  0.498E-12 0.437E-09 0.649E-14 0.100+101 (cfl drt chem other)
+   2.84% it: 10998 t: 0.142E-08 dt: 0.566E-14 wc: 0.371E+03 ncell: 0.354E+05
+         dt:  0.498E-12 0.424E-09 0.629E-14 0.100+101 (cfl drt chem other)
+   2.84% it: 11301 t: 0.142E-08 dt: 0.550E-14 wc: 0.381E+03 ncell: 0.354E+05
+         dt:  0.498E-12 0.411E-09 0.611E-14 0.100+101 (cfl drt chem other)
+   2.85% it: 11605 t: 0.142E-08 dt: 0.534E-14 wc: 0.391E+03 ncell: 0.354E+05
+         dt:  0.498E-12 0.400E-09 0.593E-14 0.100+101 (cfl drt chem other)
+   2.85% it: 11908 t: 0.142E-08 dt: 0.519E-14 wc: 0.401E+03 ncell: 0.354E+05
+         dt:  0.498E-12 0.389E-09 0.577E-14 0.100+101 (cfl drt chem other)
+   2.85% it: 12210 t: 0.143E-08 dt: 0.506E-14 wc: 0.411E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.378E-09 0.562E-14 0.100+101 (cfl drt chem other)
+   2.86% it: 12513 t: 0.143E-08 dt: 0.492E-14 wc: 0.421E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.368E-09 0.547E-14 0.100+101 (cfl drt chem other)
+   2.86% it: 12816 t: 0.143E-08 dt: 0.480E-14 wc: 0.431E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.359E-09 0.533E-14 0.100+101 (cfl drt chem other)
+   2.86% it: 13118 t: 0.143E-08 dt: 0.468E-14 wc: 0.441E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.350E-09 0.520E-14 0.100+101 (cfl drt chem other)
+   2.86% it: 13422 t: 0.143E-08 dt: 0.457E-14 wc: 0.451E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.342E-09 0.507E-14 0.100+101 (cfl drt chem other)
+   2.87% it: 13725 t: 0.143E-08 dt: 0.446E-14 wc: 0.461E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.334E-09 0.496E-14 0.100+101 (cfl drt chem other)
+   2.87% it: 14029 t: 0.144E-08 dt: 0.436E-14 wc: 0.471E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.326E-09 0.484E-14 0.100+101 (cfl drt chem other)
+   2.87% it: 14332 t: 0.144E-08 dt: 0.426E-14 wc: 0.481E+03 ncell: 0.354E+05
+         dt:  0.499E-12 0.319E-09 0.473E-14 0.100+101 (cfl drt chem other)
+   2.88% it: 14635 t: 0.144E-08 dt: 0.417E-14 wc: 0.491E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.312E-09 0.463E-14 0.100+101 (cfl drt chem other)
+   2.88% it: 14938 t: 0.144E-08 dt: 0.408E-14 wc: 0.501E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.305E-09 0.453E-14 0.100+101 (cfl drt chem other)
+   2.88% it: 15241 t: 0.144E-08 dt: 0.399E-14 wc: 0.511E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.298E-09 0.443E-14 0.100+101 (cfl drt chem other)
+   2.88% it: 15545 t: 0.144E-08 dt: 0.391E-14 wc: 0.521E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.292E-09 0.434E-14 0.100+101 (cfl drt chem other)
+   2.88% it: 15849 t: 0.144E-08 dt: 0.383E-14 wc: 0.531E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.286E-09 0.425E-14 0.100+101 (cfl drt chem other)
+   2.89% it: 16153 t: 0.144E-08 dt: 0.375E-14 wc: 0.541E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.281E-09 0.417E-14 0.100+101 (cfl drt chem other)
+   2.89% it: 16457 t: 0.144E-08 dt: 0.368E-14 wc: 0.551E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.275E-09 0.409E-14 0.100+101 (cfl drt chem other)
+   2.89% it: 16760 t: 0.145E-08 dt: 0.361E-14 wc: 0.561E+03 ncell: 0.354E+05
+         dt:  0.500E-12 0.270E-09 0.401E-14 0.100+101 (cfl drt chem other)
+   2.89% it: 17062 t: 0.145E-08 dt: 0.354E-14 wc: 0.571E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.265E-09 0.394E-14 0.100+101 (cfl drt chem other)
+   2.90% it: 17365 t: 0.145E-08 dt: 0.348E-14 wc: 0.581E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.260E-09 0.386E-14 0.100+101 (cfl drt chem other)
+   2.90% it: 17667 t: 0.145E-08 dt: 0.342E-14 wc: 0.591E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.255E-09 0.380E-14 0.100+101 (cfl drt chem other)
+   2.90% it: 17970 t: 0.145E-08 dt: 0.336E-14 wc: 0.601E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.251E-09 0.373E-14 0.100+101 (cfl drt chem other)
+   2.90% it: 18273 t: 0.145E-08 dt: 0.330E-14 wc: 0.611E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.246E-09 0.366E-14 0.100+101 (cfl drt chem other)
+   2.90% it: 18577 t: 0.145E-08 dt: 0.324E-14 wc: 0.621E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.242E-09 0.360E-14 0.100+101 (cfl drt chem other)
+   2.91% it: 18880 t: 0.145E-08 dt: 0.319E-14 wc: 0.631E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.238E-09 0.354E-14 0.100+101 (cfl drt chem other)
+   2.91% it: 19182 t: 0.145E-08 dt: 0.313E-14 wc: 0.641E+03 ncell: 0.354E+05
+         dt:  0.501E-12 0.234E-09 0.348E-14 0.100+101 (cfl drt chem other)
+   2.91% it: 19485 t: 0.145E-08 dt: 0.308E-14 wc: 0.651E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.230E-09 0.343E-14 0.100+101 (cfl drt chem other)
+   2.91% it: 19788 t: 0.146E-08 dt: 0.303E-14 wc: 0.661E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.227E-09 0.337E-14 0.100+101 (cfl drt chem other)
+   2.91% it: 20091 t: 0.146E-08 dt: 0.299E-14 wc: 0.671E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.223E-09 0.332E-14 0.100+101 (cfl drt chem other)
+   2.92% it: 20394 t: 0.146E-08 dt: 0.294E-14 wc: 0.681E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.220E-09 0.327E-14 0.100+101 (cfl drt chem other)
+   2.92% it: 20697 t: 0.146E-08 dt: 0.290E-14 wc: 0.691E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.216E-09 0.322E-14 0.100+101 (cfl drt chem other)
+   2.92% it: 21001 t: 0.146E-08 dt: 0.285E-14 wc: 0.701E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.213E-09 0.317E-14 0.100+101 (cfl drt chem other)
+   2.92% it: 21305 t: 0.146E-08 dt: 0.281E-14 wc: 0.712E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.210E-09 0.312E-14 0.100+101 (cfl drt chem other)
+   2.92% it: 21608 t: 0.146E-08 dt: 0.277E-14 wc: 0.722E+03 ncell: 0.354E+05
+         dt:  0.502E-12 0.207E-09 0.308E-14 0.100+101 (cfl drt chem other)
+   2.92% it: 21910 t: 0.146E-08 dt: 0.273E-14 wc: 0.732E+03 ncell: 0.354E+05
+         dt:  0.503E-12 0.204E-09 0.303E-14 0.100+101 (cfl drt chem other)
+   2.93% it: 22213 t: 0.146E-08 dt: 0.269E-14 wc: 0.742E+03 ncell: 0.354E+05
+         dt:  0.503E-12 0.201E-09 0.299E-14 0.100+101 (cfl drt chem other)
+   2.93% it: 22516 t: 0.146E-08 dt: 0.266E-14 wc: 0.752E+03 ncell: 0.354E+05
+         dt:  0.503E-12 0.198E-09 0.295E-14 0.100+101 (cfl drt chem other)
+   2.93% it: 22819 t: 0.146E-08 dt: 0.262E-14 wc: 0.762E+03 ncell: 0.354E+05
+         dt:  0.503E-12 0.195E-09 0.291E-14 0.100+101 (cfl drt chem other)
+   2.93% it: 23121 t: 0.147E-08 dt: 0.258E-14 wc: 0.772E+03 ncell: 0.354E+05
+         dt:  0.503E-12 0.193E-09 0.287E-14 0.100+101 (cfl drt chem other)
+   2.93% it: 23425 t: 0.147E-08 dt: 0.255E-14 wc: 0.782E+03 ncell: 0.354E+05
+         dt:  0.503E-12 0.190E-09 0.283E-14 0.100+101 (cfl drt chem other)
+   2.93% it: 23729 t: 0.147E-08 dt: 0.252E-14 wc: 0.792E+03 ncell: 0.354E+05
+         dt:  0.503E-12 0.188E-09 0.280E-14 0.100+101 (cfl drt chem other)
+   2.94% it: 24033 t: 0.147E-08 dt: 0.248E-14 wc: 0.802E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.185E-09 0.276E-14 0.100+101 (cfl drt chem other)
+   2.94% it: 24338 t: 0.147E-08 dt: 0.245E-14 wc: 0.812E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.183E-09 0.272E-14 0.100+101 (cfl drt chem other)
+   2.94% it: 24642 t: 0.147E-08 dt: 0.242E-14 wc: 0.822E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.181E-09 0.269E-14 0.100+101 (cfl drt chem other)
+   2.94% it: 24945 t: 0.147E-08 dt: 0.239E-14 wc: 0.832E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.178E-09 0.266E-14 0.100+101 (cfl drt chem other)
+   2.94% it: 25249 t: 0.147E-08 dt: 0.236E-14 wc: 0.842E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.176E-09 0.262E-14 0.100+101 (cfl drt chem other)
+   2.94% it: 25553 t: 0.147E-08 dt: 0.233E-14 wc: 0.852E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.174E-09 0.259E-14 0.100+101 (cfl drt chem other)
+   2.94% it: 25857 t: 0.147E-08 dt: 0.230E-14 wc: 0.862E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.172E-09 0.256E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 26161 t: 0.147E-08 dt: 0.228E-14 wc: 0.872E+03 ncell: 0.354E+05
+         dt:  0.504E-12 0.170E-09 0.253E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 26465 t: 0.147E-08 dt: 0.225E-14 wc: 0.882E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.168E-09 0.250E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 26769 t: 0.147E-08 dt: 0.222E-14 wc: 0.892E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.166E-09 0.247E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 27073 t: 0.147E-08 dt: 0.220E-14 wc: 0.902E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.164E-09 0.244E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 27377 t: 0.148E-08 dt: 0.217E-14 wc: 0.912E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.162E-09 0.242E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 27681 t: 0.148E-08 dt: 0.215E-14 wc: 0.922E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.160E-09 0.239E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 27985 t: 0.148E-08 dt: 0.213E-14 wc: 0.932E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.158E-09 0.236E-14 0.100+101 (cfl drt chem other)
+   2.95% it: 28289 t: 0.148E-08 dt: 0.210E-14 wc: 0.942E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.157E-09 0.234E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 28593 t: 0.148E-08 dt: 0.208E-14 wc: 0.952E+03 ncell: 0.354E+05
+         dt:  0.505E-12 0.155E-09 0.231E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 28897 t: 0.148E-08 dt: 0.206E-14 wc: 0.962E+03 ncell: 0.354E+05
+         dt:  0.506E-12 0.153E-09 0.229E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 29201 t: 0.148E-08 dt: 0.204E-14 wc: 0.972E+03 ncell: 0.354E+05
+         dt:  0.506E-12 0.152E-09 0.226E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 29505 t: 0.148E-08 dt: 0.202E-14 wc: 0.982E+03 ncell: 0.354E+05
+         dt:  0.506E-12 0.150E-09 0.224E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 29809 t: 0.148E-08 dt: 0.199E-14 wc: 0.992E+03 ncell: 0.354E+05
+         dt:  0.506E-12 0.148E-09 0.222E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 30113 t: 0.148E-08 dt: 0.197E-14 wc: 0.100E+04 ncell: 0.354E+05
+         dt:  0.506E-12 0.147E-09 0.219E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 30418 t: 0.148E-08 dt: 0.195E-14 wc: 0.101E+04 ncell: 0.354E+05
+         dt:  0.506E-12 0.145E-09 0.217E-14 0.100+101 (cfl drt chem other)
+   2.96% it: 30721 t: 0.148E-08 dt: 0.193E-14 wc: 0.102E+04 ncell: 0.354E+05
+         dt:  0.506E-12 0.144E-09 0.215E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 31025 t: 0.148E-08 dt: 0.192E-14 wc: 0.103E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.142E-09 0.213E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 31329 t: 0.148E-08 dt: 0.190E-14 wc: 0.104E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.141E-09 0.211E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 31633 t: 0.148E-08 dt: 0.188E-14 wc: 0.105E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.140E-09 0.209E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 31937 t: 0.148E-08 dt: 0.186E-14 wc: 0.106E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.138E-09 0.207E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 32240 t: 0.149E-08 dt: 0.184E-14 wc: 0.107E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.137E-09 0.205E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 32544 t: 0.149E-08 dt: 0.183E-14 wc: 0.108E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.136E-09 0.203E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 32848 t: 0.149E-08 dt: 0.181E-14 wc: 0.109E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.134E-09 0.201E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 33152 t: 0.149E-08 dt: 0.179E-14 wc: 0.110E+04 ncell: 0.354E+05
+         dt:  0.507E-12 0.133E-09 0.199E-14 0.100+101 (cfl drt chem other)
+   2.97% it: 33457 t: 0.149E-08 dt: 0.178E-14 wc: 0.111E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.132E-09 0.197E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 33761 t: 0.149E-08 dt: 0.176E-14 wc: 0.112E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.131E-09 0.195E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 34065 t: 0.149E-08 dt: 0.174E-14 wc: 0.113E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.129E-09 0.194E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 34370 t: 0.149E-08 dt: 0.173E-14 wc: 0.114E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.128E-09 0.192E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 34674 t: 0.149E-08 dt: 0.171E-14 wc: 0.115E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.127E-09 0.190E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 34978 t: 0.149E-08 dt: 0.170E-14 wc: 0.116E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.126E-09 0.189E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 35283 t: 0.149E-08 dt: 0.168E-14 wc: 0.117E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.125E-09 0.187E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 35587 t: 0.149E-08 dt: 0.167E-14 wc: 0.118E+04 ncell: 0.354E+05
+         dt:  0.508E-12 0.124E-09 0.185E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 35891 t: 0.149E-08 dt: 0.165E-14 wc: 0.119E+04 ncell: 0.354E+05
+         dt:  0.509E-12 0.123E-09 0.184E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 36196 t: 0.149E-08 dt: 0.164E-14 wc: 0.120E+04 ncell: 0.354E+05
+         dt:  0.509E-12 0.122E-09 0.182E-14 0.100+101 (cfl drt chem other)
+   2.98% it: 36500 t: 0.149E-08 dt: 0.163E-14 wc: 0.121E+04 ncell: 0.354E+05
+         dt:  0.509E-12 0.121E-09 0.181E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 36805 t: 0.149E-08 dt: 0.161E-14 wc: 0.122E+04 ncell: 0.354E+05
+         dt:  0.509E-12 0.119E-09 0.179E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 37110 t: 0.149E-08 dt: 0.160E-14 wc: 0.123E+04 ncell: 0.354E+05
+         dt:  0.509E-12 0.118E-09 0.178E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 37414 t: 0.149E-08 dt: 0.159E-14 wc: 0.124E+04 ncell: 0.354E+05
+         dt:  0.509E-12 0.117E-09 0.176E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 37719 t: 0.149E-08 dt: 0.157E-14 wc: 0.125E+04 ncell: 0.354E+05
+         dt:  0.509E-12 0.117E-09 0.175E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 38023 t: 0.149E-08 dt: 0.156E-14 wc: 0.126E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.116E-09 0.174E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 38328 t: 0.150E-08 dt: 0.155E-14 wc: 0.127E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.115E-09 0.172E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 38632 t: 0.150E-08 dt: 0.154E-14 wc: 0.128E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.114E-09 0.171E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 38936 t: 0.150E-08 dt: 0.153E-14 wc: 0.129E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.113E-09 0.170E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 39241 t: 0.150E-08 dt: 0.151E-14 wc: 0.130E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.112E-09 0.168E-14 0.100+101 (cfl drt chem other)
+   2.99% it: 39546 t: 0.150E-08 dt: 0.150E-14 wc: 0.131E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.111E-09 0.167E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 39850 t: 0.150E-08 dt: 0.149E-14 wc: 0.132E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.110E-09 0.166E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 40155 t: 0.150E-08 dt: 0.148E-14 wc: 0.133E+04 ncell: 0.354E+05
+         dt:  0.510E-12 0.109E-09 0.164E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 40460 t: 0.150E-08 dt: 0.147E-14 wc: 0.134E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.108E-09 0.163E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 40763 t: 0.150E-08 dt: 0.146E-14 wc: 0.135E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.108E-09 0.162E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 41068 t: 0.150E-08 dt: 0.145E-14 wc: 0.136E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.107E-09 0.161E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 41372 t: 0.150E-08 dt: 0.144E-14 wc: 0.137E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.106E-09 0.160E-14 0.100+101 (cfl drt chem other)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000003.silo
+   3.00% it: 41667 t: 0.150E-08 dt: 0.143E-14 wc: 0.138E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.105E-09 0.158E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 41972 t: 0.150E-08 dt: 0.142E-14 wc: 0.139E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.104E-09 0.157E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 42276 t: 0.150E-08 dt: 0.141E-14 wc: 0.140E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.104E-09 0.156E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 42581 t: 0.150E-08 dt: 0.140E-14 wc: 0.141E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.103E-09 0.155E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 42885 t: 0.150E-08 dt: 0.139E-14 wc: 0.142E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.102E-09 0.154E-14 0.100+101 (cfl drt chem other)
+   3.00% it: 43190 t: 0.150E-08 dt: 0.138E-14 wc: 0.143E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.101E-09 0.153E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 43495 t: 0.150E-08 dt: 0.137E-14 wc: 0.144E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.101E-09 0.152E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 43799 t: 0.150E-08 dt: 0.136E-14 wc: 0.145E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.100E-09 0.151E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 44104 t: 0.150E-08 dt: 0.135E-14 wc: 0.146E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.993E-10 0.150E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 44408 t: 0.150E-08 dt: 0.134E-14 wc: 0.147E+04 ncell: 0.354E+05
+         dt:  0.511E-12 0.986E-10 0.149E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 44713 t: 0.150E-08 dt: 0.133E-14 wc: 0.148E+04 ncell: 0.354E+05
+         dt:  0.512E-12 0.979E-10 0.148E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 45018 t: 0.150E-08 dt: 0.132E-14 wc: 0.149E+04 ncell: 0.354E+05
+         dt:  0.512E-12 0.972E-10 0.147E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 45322 t: 0.151E-08 dt: 0.131E-14 wc: 0.150E+04 ncell: 0.354E+05
+         dt:  0.512E-12 0.965E-10 0.146E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 45626 t: 0.151E-08 dt: 0.130E-14 wc: 0.151E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.958E-10 0.145E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 45931 t: 0.151E-08 dt: 0.130E-14 wc: 0.152E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.952E-10 0.144E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 46236 t: 0.151E-08 dt: 0.129E-14 wc: 0.153E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.945E-10 0.143E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 46541 t: 0.151E-08 dt: 0.128E-14 wc: 0.154E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.939E-10 0.142E-14 0.100+101 (cfl drt chem other)
+   3.01% it: 46845 t: 0.151E-08 dt: 0.127E-14 wc: 0.155E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.933E-10 0.141E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 47150 t: 0.151E-08 dt: 0.126E-14 wc: 0.156E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.927E-10 0.140E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 47455 t: 0.151E-08 dt: 0.125E-14 wc: 0.157E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.920E-10 0.139E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 47760 t: 0.151E-08 dt: 0.125E-14 wc: 0.158E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.914E-10 0.139E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 48065 t: 0.151E-08 dt: 0.124E-14 wc: 0.159E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.908E-10 0.138E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 48371 t: 0.151E-08 dt: 0.123E-14 wc: 0.160E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.902E-10 0.137E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 48676 t: 0.151E-08 dt: 0.122E-14 wc: 0.161E+04 ncell: 0.352E+05
+         dt:  0.512E-12 0.897E-10 0.136E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 48981 t: 0.151E-08 dt: 0.122E-14 wc: 0.162E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.891E-10 0.135E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 49286 t: 0.151E-08 dt: 0.121E-14 wc: 0.163E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.885E-10 0.134E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 49590 t: 0.151E-08 dt: 0.120E-14 wc: 0.164E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.880E-10 0.134E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 49895 t: 0.151E-08 dt: 0.120E-14 wc: 0.165E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.874E-10 0.133E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 50200 t: 0.151E-08 dt: 0.119E-14 wc: 0.166E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.868E-10 0.132E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 50504 t: 0.151E-08 dt: 0.118E-14 wc: 0.167E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.863E-10 0.131E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 50809 t: 0.151E-08 dt: 0.117E-14 wc: 0.168E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.858E-10 0.130E-14 0.100+101 (cfl drt chem other)
+   3.02% it: 51113 t: 0.151E-08 dt: 0.117E-14 wc: 0.169E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.853E-10 0.130E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 51418 t: 0.151E-08 dt: 0.116E-14 wc: 0.170E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.847E-10 0.129E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 51723 t: 0.151E-08 dt: 0.115E-14 wc: 0.171E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.842E-10 0.128E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 52028 t: 0.151E-08 dt: 0.115E-14 wc: 0.172E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.837E-10 0.128E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 52333 t: 0.151E-08 dt: 0.114E-14 wc: 0.173E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.832E-10 0.127E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 52637 t: 0.151E-08 dt: 0.113E-14 wc: 0.174E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.827E-10 0.126E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 52942 t: 0.151E-08 dt: 0.113E-14 wc: 0.175E+04 ncell: 0.352E+05
+         dt:  0.513E-12 0.822E-10 0.125E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 53248 t: 0.151E-08 dt: 0.112E-14 wc: 0.176E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.817E-10 0.125E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 53552 t: 0.152E-08 dt: 0.112E-14 wc: 0.177E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.813E-10 0.124E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 53855 t: 0.152E-08 dt: 0.111E-14 wc: 0.178E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.808E-10 0.123E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 54158 t: 0.152E-08 dt: 0.110E-14 wc: 0.179E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.803E-10 0.123E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 54462 t: 0.152E-08 dt: 0.110E-14 wc: 0.180E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.799E-10 0.122E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 54765 t: 0.152E-08 dt: 0.109E-14 wc: 0.181E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.794E-10 0.121E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 55069 t: 0.152E-08 dt: 0.109E-14 wc: 0.182E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.789E-10 0.121E-14 0.100+101 (cfl drt chem other)
+   3.03% it: 55373 t: 0.152E-08 dt: 0.108E-14 wc: 0.183E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.785E-10 0.120E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 55677 t: 0.152E-08 dt: 0.107E-14 wc: 0.184E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.780E-10 0.119E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 55982 t: 0.152E-08 dt: 0.107E-14 wc: 0.185E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.776E-10 0.119E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 56285 t: 0.152E-08 dt: 0.106E-14 wc: 0.186E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.772E-10 0.118E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 56589 t: 0.152E-08 dt: 0.106E-14 wc: 0.187E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.767E-10 0.118E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 56893 t: 0.152E-08 dt: 0.105E-14 wc: 0.188E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.763E-10 0.117E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 57197 t: 0.152E-08 dt: 0.105E-14 wc: 0.189E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.759E-10 0.116E-14 0.100+101 (cfl drt chem other)
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+ERROR STOP dt too small
+
+Error termination. Backtrace:
+#0  0x7f52e84d2960 in ???
+#1  0x7f52e84d34d9 in ???
+#2  0x7f52e84d4b47 in ???
+#3  0x55ad8239b066 in streamer
+	at ../../src/streamer.f90:385
+#4  0x55ad8239690e in main
+	at ../../src/streamer.f90:5
+ Time step (dt =  0.1000E-14) getting too small
+ See the documentation on time integration
+   3.04% it: 57502 t: 0.152E-08 dt: 0.104E-14 wc: 0.190E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.755E-10 0.116E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 57807 t: 0.152E-08 dt: 0.104E-14 wc: 0.191E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.751E-10 0.115E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 58111 t: 0.152E-08 dt: 0.103E-14 wc: 0.192E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.746E-10 0.115E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 58417 t: 0.152E-08 dt: 0.103E-14 wc: 0.193E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.742E-10 0.114E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 58722 t: 0.152E-08 dt: 0.102E-14 wc: 0.194E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.738E-10 0.113E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 59027 t: 0.152E-08 dt: 0.102E-14 wc: 0.195E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.734E-10 0.113E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 59333 t: 0.152E-08 dt: 0.101E-14 wc: 0.196E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.730E-10 0.112E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 59638 t: 0.152E-08 dt: 0.101E-14 wc: 0.197E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.726E-10 0.112E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 59943 t: 0.152E-08 dt: 0.100E-14 wc: 0.198E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.723E-10 0.111E-14 0.100+101 (cfl drt chem other)
+   3.04% it: 60039 t: 0.152E-08 dt: 0.100E-14 wc: 0.199E+04 ncell: 0.352E+05
+         dt:  0.514E-12 0.721E-10 0.111E-14 0.100+101 (cfl drt chem other)
+ af_write_silo: written ./output/1bar_10O2_20ns_interpulse_000004.silo

@@ -10,6 +10,9 @@ p = argparse.ArgumentParser(
 p.add_argument("log_file", type=str, nargs='+', help="Input log file(s)")
 p.add_argument("-velocity_window", type=int,
                help="Compute average velocity over this window size")
+p.add_argument('-savefig', type=str,
+               help='Save figure using this filename')
+
 args = p.parse_args()
 
 logs = [pd.read_csv(f, sep=r'\s+') for f in args.log_file]
@@ -52,4 +55,8 @@ for i, log in enumerate(logs):
     log.plot('time', 'max(E)', ax=axes[1, 0], label=f'max(E)-{i}')
     log.plot('time', 'x.2', ax=axes[1, 1], label=f'radius-{i}')
 plt.legend()
-plt.show()
+if args.savefig is not None:
+    plt.savefig(args.savefig, bbox_inches='tight', dpi=200)
+    print(f'Saved {args.savefig}')
+else:
+    plt.show()
