@@ -38,7 +38,7 @@ module m_user
   ! -------------------------
   ! Dielectric slab
   ! -------------------------
-  real(dp) :: dielectric_eps = 5.0_dp
+  real(dp) :: dielectric_eps = 3.0_dp
   real(dp) :: slab_y0 = 4.875e-3_dp
   real(dp) :: slab_y1 = 8.125e-3_dp
 
