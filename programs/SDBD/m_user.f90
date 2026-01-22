@@ -38,11 +38,17 @@ module m_user
   ! -------------------------
   ! Dielectric slab
   ! -------------------------
-  real(dp) :: dielectric_eps = 3.0_dp
-  real(dp) :: slab_y0 = 4.875e-3_dp
-  real(dp) :: slab_y1 = 8.125e-3_dp
+  real(dp) :: dielectric_eps = 11.0_dp
+  real(dp) :: slab_y0 = 6.09375e-3_dp
+  real(dp) :: slab_y1 = 6.90625e-3_dp
 
 contains
+
+  pure real(dp) function smooth_max(a, b, eps) result(s)
+    real(dp), intent(in) :: a, b, eps
+    s = 0.5_dp * (a + b + sqrt((a - b)**2 + eps**2))
+  end function smooth_max
+
 
   subroutine user_initialize(cfg, tree)
     type(CFG_t), intent(inout) :: cfg
@@ -109,7 +115,9 @@ contains
       d_half = x(2) - y_cut         ! <=0 when x(2) <= y_cut
     end if
 
-    lsf = max(d_circle, d_half)     ! intersection of circle and half-space
+    !lsf = max(d_circle, d_half)     ! intersection of circle and half-space
+    lsf = smooth_max(d_circle, d_half, 5.0e-5_dp)
+
   end function cutcircle_lsf
 
   real(dp) function my_user_lsf(x) result(lsf)
